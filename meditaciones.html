@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditaciones · Natalia Amor · Terapias Energéticas</title>
+    <link rel="icon" type="image/jpeg" href="Source/WhatsApp Image 2026-06-06 at 12.29.55 (2).jpeg" />
+    <meta name="description"
+        content="Meditaciones guiadas por Natalia Amor: energéticas, de reprogramación y constelatorias. Accedé a contenido gratuito para conectar con tu energía interior." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ── VARIABLES ─────────────────────────────────────── */
+        :root {
+            --color-base: #FFFFFF;
+            --color-text: #2A2B2A;
+            --color-warm: #F2D5B2;
+            --color-action: #9DBEEB;
+            --color-border: #D3CAC3;
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Jost', sans-serif;
+
+            --max-w: 1080px;
+            --section-pad: 100px 24px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--color-base);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ── NAV ───────────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            transition: box-shadow .3s;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(42, 43, 42, .07);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+        }
+
+        .nav-logo span {
+            color: var(--color-action);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: .82rem;
+            font-weight: 400;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .75;
+            transition: opacity .2s, color .2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a::after {
+            content: '▾';
+            font-size: 0.65rem;
+            opacity: 0.7;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .nav-links li:not(.has-dropdown)>a::after,
+        .nav-links li.nav-cta-item>a::after {
+            content: none;
+        }
+
+        .nav-links li:hover>a::after {
+            transform: rotate(180deg);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            opacity: 1;
+        }
+
+        .nav-links a.active {
+            border-bottom: 1px solid var(--color-action);
+            padding-bottom: 2px;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(42, 43, 42, 0.08);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            list-style: none;
+            padding: 12px 0;
+            z-index: 1000;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+
+        .dropdown li {
+            padding: 0;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 20px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.75;
+            white-space: nowrap;
+            transition: background 0.2s, color 0.2s, opacity 0.2s;
+        }
+
+        .dropdown a::after {
+            content: none !important;
+        }
+
+        .dropdown a:hover {
+            opacity: 1;
+            background: #faf7f4;
+            color: var(--color-action);
+        }
+
+        .nav-links li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 110;
+            padding: 0;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-text);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta {
+            background: var(--color-action);
+            color: var(--color-text);
+            padding: 9px 22px;
+            border-radius: 2px;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: background .2s, transform .15s;
+        }
+
+        .nav-cta:hover {
+            background: #82aede;
+            transform: translateY(-1px);
+        }
+
+        /* ── PAGE HERO ─────────────────────────────────────── */
+        .page-hero {
+            padding-top: 80px;
+            min-height: 55vh;
+            background: linear-gradient(160deg, #f0eaf5 0%, #d8c8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(42, 43, 42, .07);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 1px solid rgba(42, 43, 42, .09);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeUp .9s ease both;
+        }
+
+        .page-hero-eyebrow {
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            opacity: .5;
+            margin-bottom: 20px;
+        }
+
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .page-hero-title em {
+            font-style: italic;
+            color: var(--color-action);
+        }
+
+        .page-hero-sub {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 300;
+            font-style: italic;
+            opacity: .65;
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── SECTION UTILITIES ─────────────────────────────── */
+        .section-label {
+            font-size: .68rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--color-action);
+            font-weight: 500;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .section-title em {
+            font-style: italic;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .section-header .section-title {
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: .9rem;
+            opacity: .65;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ── MEDITACIÓN ROW ───────────────────────────────── */
+        .med-wrap {
+            padding: var(--section-pad);
+        }
+
+        .med-wrap-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .med-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .med-row:last-child {
+            border-bottom: none;
+        }
+
+        .med-row.reverse {
+            direction: rtl;
+        }
+
+        .med-row.reverse>* {
+            direction: ltr;
+        }
+
+        .med-row-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .med-img-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-warm), #e8c99a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 5rem;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 300;
+            box-shadow: 0 20px 60px rgba(42, 43, 42, .12);
+            transition: transform .4s ease, box-shadow .4s ease;
+        }
+
+        .med-img-placeholder:hover {
+            transform: scale(1.04) rotate(2deg);
+            box-shadow: 0 28px 80px rgba(42, 43, 42, .18);
+        }
+
+        .med-row-content {}
+
+        .med-number {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(--color-border);
+            line-height: 1;
+            margin-bottom: -8px;
+        }
+
+        .med-row-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .med-row-title em {
+            font-style: italic;
+            color: var(--color-action);
+        }
+
+        .med-row-desc {
+            font-size: .9rem;
+            line-height: 1.85;
+            opacity: .72;
+            margin-bottom: 24px;
+        }
+
+        .med-row-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .med-tag {
+            display: inline-block;
+            font-size: .65rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            background: var(--color-warm);
+            border-radius: 20px;
+        }
+
+        .med-tag.dark {
+            background: var(--color-text);
+            color: var(--color-base);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid var(--color-text);
+            padding: 11px 26px;
+            font-size: .75rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 400;
+            border-radius: 2px;
+            transition: background .2s, color .2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-text);
+            color: var(--color-base);
+        }
+
+        /* ── QUOTE STRIP ───────────────────────────────────── */
+        .quote-strip {
+            background: var(--color-text);
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .quote-strip blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--color-warm);
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* ── YOUTUBE EMBED SECTION ─────────────────────────── */
+        .youtube-section {
+            background: #f9f5f0;
+            padding: var(--section-pad);
+            text-align: center;
+        }
+
+        .youtube-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 52px;
+        }
+
+        .yt-card {
+            background: var(--color-base);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .yt-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(42, 43, 42, .08);
+        }
+
+        .yt-card-icon {
+            font-size: 2.4rem;
+            margin-bottom: 18px;
+        }
+
+        .yt-card-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .yt-card-desc {
+            font-size: .84rem;
+            line-height: 1.7;
+            opacity: .65;
+        }
+
+        /* ── CTA SECTION ──────────────────────────────────── */
+        .cta-section {
+            background: var(--color-text);
+            padding: var(--section-pad);
+            text-align: center;
+        }
+
+        .cta-section .section-title {
+            color: var(--color-base);
+        }
+
+        .cta-section .section-label {
+            color: var(--color-warm);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .9rem;
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .btn-warm {
+            display: inline-block;
+            background: var(--color-warm);
+            color: var(--color-text);
+            padding: 15px 36px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: background .2s, transform .15s;
+        }
+
+        .btn-warm:hover {
+            background: #ead0a7;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: #ffffff;
+            padding: 15px 36px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-secondary-light {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, .3);
+            color: rgba(255, 255, 255, .7);
+            padding: 15px 36px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 400;
+            border-radius: 2px;
+            margin-left: 14px;
+            transition: border-color .2s, color .2s;
+        }
+
+        .btn-secondary-light:hover {
+            border-color: var(--color-warm);
+            color: var(--color-warm);
+        }
+
+        /* ── LEGAL FOOTER ─────────────────────────────────── */
+        .legal-footer {
+            background: #161716;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.68rem;
+            line-height: 1.6;
+            padding: 32px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .legal-footer-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .legal-footer strong {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .legal-footer .copyright {
+            margin-top: 8px;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* ── FOOTER ────────────────────────────────────────── */
+        footer {
+            background: #1e1f1e;
+            color: rgba(255, 255, 255, .4);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: .75rem;
+            letter-spacing: .08em;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, .5);
+            transition: color .2s;
+        }
+
+        footer a:hover {
+            color: var(--color-warm);
+        }
+
+        /* ── WHATSAPP FLOTANTE ─────────────────────────────── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 14px 20px 14px 16px;
+            border-radius: 50px;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+            font-family: var(--font-body);
+            font-size: .82rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            cursor: pointer;
+            transition: background .2s, transform .2s, box-shadow .2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #1ebe5d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(37, 211, 102, .55);
+        }
+
+        .whatsapp-float svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-float-label {
+            white-space: nowrap;
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50px;
+            border: 2px solid rgba(37, 211, 102, .55);
+            animation: waPulse 2.2s ease-out infinite;
+        }
+
+        @keyframes waPulse {
+            0% {
+                transform: scale(1);
+                opacity: .8;
+            }
+
+            70% {
+                transform: scale(1.12);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.12);
+                opacity: 0;
+            }
+        }
+
+        /* ── DIVIDER ───────────────────────────────────────── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+            opacity: .3;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        .divider span {
+            font-size: .9rem;
+        }
+
+        /* ── ANIMATIONS ────────────────────────────────────── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ────────────────────────────────────── */
+        @media (max-width: 860px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #ffffff;
+                box-shadow: -10px 0 30px rgba(42, 43, 42, 0.05);
+                border-left: 1px solid var(--color-border);
+                padding: 100px 30px 40px;
+                gap: 24px;
+                z-index: 105;
+                transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                padding: 0;
+                width: 100%;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                min-width: 0;
+                padding: 8px 0 0 16px;
+                display: none;
+            }
+
+            .nav-links li.active-mobile-dropdown .dropdown {
+                display: block;
+            }
+
+            .dropdown a {
+                padding: 8px 0;
+                font-size: 0.8rem;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .med-row {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 48px 0;
+            }
+
+            .med-row.reverse {
+                direction: ltr;
+            }
+
+            .med-row-img {
+                order: -1;
+            }
+
+            .med-img-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .youtube-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-secondary-light {
+                margin-left: 0;
+                margin-top: 12px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 16px;
+                padding: 12px 16px 12px 14px;
+            }
+
+            .whatsapp-float-label {
+                display: none;
+            }
+
+            :root {
+                --section-pad: 64px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a class="nav-logo" href="index.html">Natalia<span>Amor</span></a>
+        <ul class="nav-links" id="nav-links">
+            <li class="has-dropdown">
+                <a href="sobre.html">Sobre Mí</a>
+                <ul class="dropdown">
+                    <li><a href="sobre.html#resena">Reseña</a></li>
+                    <li><a href="sobre.html#formacion">Formación</a></li>
+                    <li><a href="sobre.html#espacio">Espacio</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="servicios.html">Servicios</a>
+                <ul class="dropdown">
+                    <li><a href="servicios.html#balancing">Balancing</a></li>
+                    <li><a href="servicios.html#astrologia">Astrología</a></li>
+                    <li><a href="servicios.html#tameana">Tameana</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="meditaciones.html" class="active">Meditaciones</a>
+                <ul class="dropdown">
+                    <li><a href="meditaciones.html#energeticas">Energéticas</a></li>
+                    <li><a href="meditaciones.html#reprogramacion">Reprogramación</a></li>
+                    <li><a href="meditaciones.html#constelatorias">Constelatorias</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="cursos.html">Cursos Online</a>
+                <ul class="dropdown">
+                    <li><a href="cursos.html#tecnica-equilibrio">Técnica de Equilibrio</a></li>
+                    <li><a href="cursos.html#tameana-nivel1">Tameana ~ Nivel I</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="contacto.html">Contacto</a>
+                <ul class="dropdown">
+                    <li><a href="contacto.html#telefono">Teléfono</a></li>
+                    <li><a href="contacto.html#redes">Redes</a></li>
+                    <li><a href="contacto.html#membresia">Membresía</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="nav-cta" href="https://wa.me/5491161454942" target="_blank">Reservar sesión</a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <p class="page-hero-eyebrow">Contenido gratuito · Canal de YouTube</p>
+            <h1 class="page-hero-title">Mis <em>Meditaciones</em></h1>
+            <p class="page-hero-sub">Prácticas guiadas para conectar con tu energía, reprogramar patrones y expandir tu
+                conciencia.</p>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote-strip">
+        <blockquote>"La meditación es el puente entre lo que sos y lo que viniste a ser. Cada práctica te acerca un paso
+            más a tu verdad interior."</blockquote>
+    </div>
+
+    <!-- MEDITACIONES DETALLADAS -->
+    <section class="med-wrap">
+        <div class="med-wrap-inner">
+
+            <div class="section-header reveal">
+                <span class="section-label">Tipos de Meditación</span>
+                <h2 class="section-title">Explorá cada <em>práctica</em></h2>
+                <p>Cada tipo de meditación trabaja un aspecto diferente de tu ser. Encontrá la que más resuena con tu
+                    momento actual.</p>
+            </div>
+
+            <!-- 01 — ENERGÉTICAS -->
+            <div class="med-row reveal" id="energeticas">
+                <div class="med-row-img">
+                    <div class="med-img-placeholder">🌀</div>
+                </div>
+                <div class="med-row-content">
+                    <div class="med-number">01</div>
+                    <h2 class="med-row-title">Meditaciones<br><em>Energéticas</em></h2>
+                    <p class="med-row-desc">
+                        Meditaciones basadas en la técnica EMF Balancing Technique® que trabajan directamente sobre tu
+                        campo electromagnético humano (UCL). Estas prácticas te ayudan a fortalecer la conexión entre tu
+                        sabiduría interior y el mundo que habitás.
+                    </p>
+                    <p class="med-row-desc">
+                        A través de visualizaciones guiadas y activaciones de fibras energéticas, equilibrás y
+                        potenciás tu campo de energía para vivir con más claridad, presencia y propósito.
+                    </p>
+                    <div class="med-row-tags">
+                        <span class="med-tag">EMF Balancing</span>
+                        <span class="med-tag">Campo electromagnético</span>
+                        <span class="med-tag dark">Gratuito en YouTube</span>
+                    </div>
+                    <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver en
+                        YouTube →</a>
+                </div>
+            </div>
+
+            <!-- 02 — REPROGRAMACIÓN -->
+            <div class="med-row reverse reveal" id="reprogramacion">
+                <div class="med-row-img">
+                    <div class="med-img-placeholder">🧠</div>
+                </div>
+                <div class="med-row-content">
+                    <div class="med-number">02</div>
+                    <h2 class="med-row-title">Meditaciones de<br><em>Reprogramación</em></h2>
+                    <p class="med-row-desc">
+                        Combinando técnicas de Mindfulness y PNL (Programación Neurolingüística), estas meditaciones te
+                        ayudan a identificar y transformar patrones mentales limitantes. Reprogramar tu mente es el
+                        primer paso para cambiar tu realidad.
+                    </p>
+                    <p class="med-row-desc">
+                        Cada sesión guiada trabaja sobre creencias, hábitos y respuestas automáticas que ya no te
+                        sirven, reemplazándolas por nuevas conexiones neuronales alineadas con tu bienestar y evolución.
+                    </p>
+                    <div class="med-row-tags">
+                        <span class="med-tag">PNL</span>
+                        <span class="med-tag">Mindfulness</span>
+                        <span class="med-tag dark">Gratuito en YouTube</span>
+                    </div>
+                    <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver en
+                        YouTube →</a>
+                </div>
+            </div>
+
+            <!-- 03 — CONSTELATORIAS -->
+            <div class="med-row reveal" id="constelatorias">
+                <div class="med-row-img">
+                    <div class="med-img-placeholder">⭐</div>
+                </div>
+                <div class="med-row-content">
+                    <div class="med-number">03</div>
+                    <h2 class="med-row-title">Meditaciones<br><em>Constelatorias</em></h2>
+                    <p class="med-row-desc">
+                        Prácticas diseñadas para activar memorias estelares y conectar con recuerdos de origen. Estas
+                        meditaciones trabajan con geometría sagrada y conexiones cósmicas para expandir tu conciencia
+                        hacia dimensiones más amplias del ser.
+                    </p>
+                    <p class="med-row-desc">
+                        A través de la conexión con tus recuerdos estelares, descubrís aspectos profundos de tu misión
+                        de vida y tu propósito más elevado. Una experiencia de expansión y reconexión con tu origen.
+                    </p>
+                    <div class="med-row-tags">
+                        <span class="med-tag">Activaciones estelares</span>
+                        <span class="med-tag">Geometría sagrada</span>
+                        <span class="med-tag dark">Gratuito en YouTube</span>
+                    </div>
+                    <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver en
+                        YouTube →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"><span>✦</span></div>
+
+    <!-- CONTENIDO EN YOUTUBE -->
+    <section class="youtube-section">
+        <div class="youtube-inner">
+            <div class="section-header reveal">
+                <span class="section-label">Canal de YouTube</span>
+                <h2 class="section-title">Contenido <em>gratuito</em> para vos</h2>
+                <p>Todo el contenido meditativo está disponible de forma gratuita en el canal de YouTube. ¡Suscribite y
+                    activá las notificaciones!</p>
+            </div>
+
+            <div class="youtube-grid">
+                <div class="yt-card reveal">
+                    <div class="yt-card-icon">🎧</div>
+                    <h3 class="yt-card-title">Meditaciones guiadas</h3>
+                    <p class="yt-card-desc">Sesiones completas para meditar desde donde estés. Ideales para
+                        principiantes
+                        y para quienes ya tienen práctica.</p>
+                </div>
+
+                <div class="yt-card reveal">
+                    <div class="yt-card-icon">💫</div>
+                    <h3 class="yt-card-title">Activaciones de origen</h3>
+                    <p class="yt-card-desc">Prácticas de reconexión con memorias estelares y activación de potenciales
+                        dormidos en tu campo energético.</p>
+                </div>
+
+                <div class="yt-card reveal">
+                    <div class="yt-card-icon">📖</div>
+                    <h3 class="yt-card-title">Videos introductorios</h3>
+                    <p class="yt-card-desc">Explicaciones sobre las terapias, herramientas y conceptos clave para que
+                        entiendas cada paso del camino.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:52px;" class="reveal">
+                <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank"
+                    style="padding:15px 40px;">Ir al canal de YouTube →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section reveal">
+        <span class="section-label">¿Querés ir más profundo?</span>
+        <h2 class="section-title">Reservá una sesión <em>personalizada</em></h2>
+        <p>Si las meditaciones te resonaron, imaginate lo que una sesión 1:1 puede hacer por tu proceso. Escribime y
+            encontramos juntas la terapia ideal para vos.</p>
+        <div>
+            <a class="btn-whatsapp" href="https://wa.me/5491161454942" target="_blank">Escribir por WhatsApp</a>
+            <a class="btn-secondary-light" href="servicios.html">Ver servicios</a>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a id="whatsapp-btn" class="whatsapp-float" href="https://wa.me/5491161454942" target="_blank"
+        rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.886a.5.5 0 0 0 .611.611l6.077-1.472A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.933 0-3.742-.524-5.288-1.434l-.375-.224-3.905.947.966-3.82-.245-.392A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+        </svg>
+        <span class="whatsapp-float-label">Escribime por WhatsApp</span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Natalia Amor · Terapias Energéticas &nbsp;·&nbsp; Buenos Aires, Argentina &nbsp;·&nbsp;
+            <a href="https://www.instagram.com/Natyamorterapias" target="_blank">Instagram</a> &nbsp;·&nbsp;
+            <a href="https://linktr.ee/Natyamorterapias" target="_blank">Linktree</a>
+        </p>
+    </footer>
+
+    <!-- SUB-FOOTER LEGAL -->
+    <div class="legal-footer">
+        <div class="legal-footer-inner">
+            <p><strong>Descargo de responsabilidad legal:</strong> Las terapias energéticas, iniciaciones, lecturas de
+                cartas natales y meditaciones ofrecidas en este sitio web son herramientas de armonización,
+                autoconocimiento y desarrollo personal. No constituyen tratamientos médicos, psiquiátricos o
+                psicológicos, ni reemplazan la consulta con profesionales de la salud matriculados. Si tenés alguna
+                condición médica o psicológica preexistente, te recomendamos consultar con tu médico de cabecera.
+                Natalia Amor no diagnostica ni receta medicamentos.</p>
+            <p class="copyright">© 2025 Natalia Amor · Todos los derechos reservados · Sitio Web diseñado con fines
+                profesionales e informativos.</p>
+        </div>
+    </div>
+
+    <script>
+        // Nav shadow on scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Hamburger mobile menu
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Mobile dropdown toggle
+        const dropdownTriggers = document.querySelectorAll('.nav-links > li.has-dropdown > a');
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 860) {
+                    e.preventDefault();
+                    const parent = trigger.parentElement;
+                    parent.classList.toggle('active-mobile-dropdown');
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

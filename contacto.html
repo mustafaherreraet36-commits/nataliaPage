@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto · Natalia Amor · Terapias Energéticas</title>
+    <link rel="icon" type="image/jpeg" href="Source/WhatsApp Image 2026-06-06 at 12.29.55 (2).jpeg" />
+    <meta name="description"
+        content="Contactá a Natalia Amor por WhatsApp, Instagram, Facebook o YouTube. Reservá tu sesión de terapia energética o conocé las opciones de membresía." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ── VARIABLES ─────────────────────────────────────── */
+        :root {
+            --color-base: #FFFFFF;
+            --color-text: #2A2B2A;
+            --color-warm: #F2D5B2;
+            --color-action: #9DBEEB;
+            --color-border: #D3CAC3;
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Jost', sans-serif;
+
+            --max-w: 1080px;
+            --section-pad: 100px 24px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--color-base);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ── NAV ───────────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            transition: box-shadow .3s;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(42, 43, 42, .07);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+        }
+
+        .nav-logo span {
+            color: var(--color-action);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: .82rem;
+            font-weight: 400;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .75;
+            transition: opacity .2s, color .2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a::after {
+            content: '▾';
+            font-size: 0.65rem;
+            opacity: 0.7;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .nav-links li:not(.has-dropdown)>a::after,
+        .nav-links li.nav-cta-item>a::after {
+            content: none;
+        }
+
+        .nav-links li:hover>a::after {
+            transform: rotate(180deg);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            opacity: 1;
+        }
+
+        .nav-links a.active {
+            border-bottom: 1px solid var(--color-action);
+            padding-bottom: 2px;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(42, 43, 42, 0.08);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            list-style: none;
+            padding: 12px 0;
+            z-index: 1000;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+
+        .dropdown li {
+            padding: 0;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 20px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.75;
+            white-space: nowrap;
+            transition: background 0.2s, color 0.2s, opacity 0.2s;
+        }
+
+        .dropdown a::after {
+            content: none !important;
+        }
+
+        .dropdown a:hover {
+            opacity: 1;
+            background: #faf7f4;
+            color: var(--color-action);
+        }
+
+        .nav-links li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 110;
+            padding: 0;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-text);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta {
+            background: var(--color-action);
+            color: var(--color-text);
+            padding: 9px 22px;
+            border-radius: 2px;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: background .2s, transform .15s;
+        }
+
+        .nav-cta:hover {
+            background: #82aede;
+            transform: translateY(-1px);
+        }
+
+        /* ── PAGE HERO ─────────────────────────────────────── */
+        .page-hero {
+            padding-top: 80px;
+            min-height: 55vh;
+            background: linear-gradient(160deg, #f9f5f0 0%, var(--color-warm) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(42, 43, 42, .07);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 1px solid rgba(42, 43, 42, .09);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeUp .9s ease both;
+        }
+
+        .page-hero-eyebrow {
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            opacity: .5;
+            margin-bottom: 20px;
+        }
+
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .page-hero-title em {
+            font-style: italic;
+            color: var(--color-action);
+        }
+
+        .page-hero-sub {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 300;
+            font-style: italic;
+            opacity: .65;
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── SECTION UTILITIES ─────────────────────────────── */
+        .section-label {
+            font-size: .68rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--color-action);
+            font-weight: 500;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .section-title em {
+            font-style: italic;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .section-header .section-title {
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: .9rem;
+            opacity: .65;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ── TELÉFONO SECTION ─────────────────────────────── */
+        .telefono-section {
+            padding: var(--section-pad);
+        }
+
+        .telefono-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .telefono-content {}
+
+        .telefono-content p {
+            font-size: .93rem;
+            line-height: 1.85;
+            opacity: .72;
+            margin-bottom: 20px;
+        }
+
+        .telefono-card {
+            background: var(--color-warm);
+            border-radius: 8px;
+            padding: 48px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(42, 43, 42, .1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telefono-card::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .3);
+            top: -60px;
+            right: -60px;
+        }
+
+        .telefono-icon {
+            font-size: 3rem;
+            margin-bottom: 18px;
+        }
+
+        .telefono-number {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .telefono-label {
+            font-size: .72rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            opacity: .55;
+            margin-bottom: 24px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: #ffffff;
+            padding: 15px 36px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-primary {
+            background: var(--color-text);
+            color: var(--color-base);
+            padding: 14px 32px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: background .2s, transform .15s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #444;
+            transform: translateY(-2px);
+        }
+
+        /* ── REDES SECTION ────────────────────────────────── */
+        .redes-section {
+            background: var(--color-text);
+            padding: var(--section-pad);
+        }
+
+        .redes-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .redes-section .section-label {
+            color: var(--color-warm);
+        }
+
+        .redes-section .section-title {
+            color: var(--color-base);
+        }
+
+        .redes-section .section-header p {
+            color: rgba(255, 255, 255, .55);
+        }
+
+        .redes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+
+        .red-card {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 8px;
+            padding: 36px 20px;
+            text-align: center;
+            transition: transform .3s, border-color .3s, background .3s;
+        }
+
+        .red-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--color-action);
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .red-card-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .red-card-icon img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .red-card-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-base);
+            margin-bottom: 6px;
+        }
+
+        .red-card-handle {
+            font-size: .72rem;
+            letter-spacing: .08em;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        /* ── DIVIDER ───────────────────────────────────────── */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+            opacity: .3;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        .divider span {
+            font-size: .9rem;
+        }
+
+        /* ── MEMBRESÍA SECTION ────────────────────────────── */
+        .membresia-section {
+            padding: var(--section-pad);
+        }
+
+        .membresia-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+
+        .membresia-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .membresia-text p {
+            font-size: .93rem;
+            line-height: 1.85;
+            opacity: .72;
+            margin-bottom: 20px;
+        }
+
+        .membresia-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 24px 0 32px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: .84rem;
+            line-height: 1.5;
+        }
+
+        .benefit-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-action);
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+
+        .membresia-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .membresia-card {
+            width: 100%;
+            max-width: 380px;
+            background: linear-gradient(145deg, var(--color-text), #3a3b3a);
+            border-radius: 12px;
+            padding: 52px 40px;
+            text-align: center;
+            color: var(--color-base);
+            box-shadow: 0 24px 64px rgba(42, 43, 42, .2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .membresia-card::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .06);
+            top: -50px;
+            right: -50px;
+        }
+
+        .membresia-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .membresia-card-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .membresia-card-title em {
+            font-style: italic;
+            color: var(--color-warm);
+        }
+
+        .membresia-card-desc {
+            font-size: .84rem;
+            opacity: .55;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .btn-warm {
+            display: inline-block;
+            background: var(--color-warm);
+            color: var(--color-text);
+            padding: 15px 36px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: background .2s, transform .15s;
+        }
+
+        .btn-warm:hover {
+            background: #ead0a7;
+            transform: translateY(-2px);
+        }
+
+        /* ── CTA FINAL ────────────────────────────────────── */
+        .cta-final {
+            padding: var(--section-pad);
+        }
+
+        .cta-final-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            background: var(--color-warm);
+            border-radius: 4px;
+            padding: 72px 64px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cta-final-text .section-label {
+            color: rgba(42, 43, 42, .55);
+        }
+
+        .cta-final-text .section-title {
+            margin-bottom: 12px;
+        }
+
+        .cta-final-text p {
+            font-size: .9rem;
+            opacity: .7;
+            max-width: 460px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--color-text);
+            padding: 14px 32px;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 400;
+            border-radius: 2px;
+            transition: background .2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(42, 43, 42, .08);
+        }
+
+        /* ── LEGAL FOOTER ─────────────────────────────────── */
+        .legal-footer {
+            background: #161716;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.68rem;
+            line-height: 1.6;
+            padding: 32px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .legal-footer-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .legal-footer strong {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .legal-footer .copyright {
+            margin-top: 8px;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* ── FOOTER ────────────────────────────────────────── */
+        footer {
+            background: #1e1f1e;
+            color: rgba(255, 255, 255, .4);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: .75rem;
+            letter-spacing: .08em;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, .5);
+            transition: color .2s;
+        }
+
+        footer a:hover {
+            color: var(--color-warm);
+        }
+
+        /* ── WHATSAPP FLOTANTE ─────────────────────────────── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 14px 20px 14px 16px;
+            border-radius: 50px;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+            font-family: var(--font-body);
+            font-size: .82rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+            cursor: pointer;
+            transition: background .2s, transform .2s, box-shadow .2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #1ebe5d;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(37, 211, 102, .55);
+        }
+
+        .whatsapp-float svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-float-label {
+            white-space: nowrap;
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50px;
+            border: 2px solid rgba(37, 211, 102, .55);
+            animation: waPulse 2.2s ease-out infinite;
+        }
+
+        @keyframes waPulse {
+            0% {
+                transform: scale(1);
+                opacity: .8;
+            }
+
+            70% {
+                transform: scale(1.12);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.12);
+                opacity: 0;
+            }
+        }
+
+        /* ── ANIMATIONS ────────────────────────────────────── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ────────────────────────────────────── */
+        @media (max-width: 860px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #ffffff;
+                box-shadow: -10px 0 30px rgba(42, 43, 42, 0.05);
+                border-left: 1px solid var(--color-border);
+                padding: 100px 30px 40px;
+                gap: 24px;
+                z-index: 105;
+                transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                padding: 0;
+                width: 100%;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                min-width: 0;
+                padding: 8px 0 0 16px;
+                display: none;
+            }
+
+            .nav-links li.active-mobile-dropdown .dropdown {
+                display: block;
+            }
+
+            .dropdown a {
+                padding: 8px 0;
+                font-size: 0.8rem;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .telefono-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .redes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .membresia-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cta-final-inner {
+                grid-template-columns: 1fr;
+                padding: 48px 32px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 16px;
+                padding: 12px 16px 12px 14px;
+            }
+
+            .whatsapp-float-label {
+                display: none;
+            }
+
+            :root {
+                --section-pad: 64px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a class="nav-logo" href="index.html">Natalia<span>Amor</span></a>
+        <ul class="nav-links" id="nav-links">
+            <li class="has-dropdown">
+                <a href="sobre.html">Sobre Mí</a>
+                <ul class="dropdown">
+                    <li><a href="sobre.html#resena">Reseña</a></li>
+                    <li><a href="sobre.html#formacion">Formación</a></li>
+                    <li><a href="sobre.html#espacio">Espacio</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="servicios.html">Servicios</a>
+                <ul class="dropdown">
+                    <li><a href="servicios.html#balancing">Balancing</a></li>
+                    <li><a href="servicios.html#astrologia">Astrología</a></li>
+                    <li><a href="servicios.html#tameana">Tameana</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="meditaciones.html">Meditaciones</a>
+                <ul class="dropdown">
+                    <li><a href="meditaciones.html#energeticas">Energéticas</a></li>
+                    <li><a href="meditaciones.html#reprogramacion">Reprogramación</a></li>
+                    <li><a href="meditaciones.html#constelatorias">Constelatorias</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="cursos.html">Cursos Online</a>
+                <ul class="dropdown">
+                    <li><a href="cursos.html#tecnica-equilibrio">Técnica de Equilibrio</a></li>
+                    <li><a href="cursos.html#tameana-nivel1">Tameana ~ Nivel I</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a href="contacto.html" class="active">Contacto</a>
+                <ul class="dropdown">
+                    <li><a href="contacto.html#telefono">Teléfono</a></li>
+                    <li><a href="contacto.html#redes">Redes</a></li>
+                    <li><a href="contacto.html#membresia">Membresía</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="nav-cta" href="https://wa.me/5491161454942" target="_blank">Reservar sesión</a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <p class="page-hero-eyebrow">Conectemos · Buenos Aires, Argentina</p>
+            <h1 class="page-hero-title"><em>Contacto</em></h1>
+            <p class="page-hero-sub">Estoy aquí para acompañarte. Elegí el canal que más te guste y escribime.</p>
+        </div>
+    </section>
+
+    <!-- TELÉFONO -->
+    <section class="telefono-section" id="telefono">
+        <div class="telefono-inner">
+            <div class="telefono-content reveal">
+                <span class="section-label">Teléfono & WhatsApp</span>
+                <h2 class="section-title">Escribime por <em>WhatsApp</em></h2>
+                <p>
+                    La forma más directa de contactarme es a través de WhatsApp. Podés escribirme para consultar sobre
+                    sesiones, cursos, horarios disponibles o cualquier duda que tengas.
+                </p>
+                <p>
+                    Respondo personalmente cada mensaje. Si estoy en sesión, te respondo lo antes posible. ¡Te espero
+                    con mucho amor!
+                </p>
+                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;">
+                    <a class="btn-whatsapp" href="https://wa.me/5491161454942" target="_blank">Escribir por WhatsApp</a>
+                    <a class="btn-primary" href="tel:+5491161454942">Llamar ahora</a>
+                </div>
+            </div>
+            <div class="telefono-card reveal">
+                <div class="telefono-icon">📱</div>
+                <div class="telefono-number">+54 9 11 6145–4942</div>
+                <div class="telefono-label">Buenos Aires, Argentina</div>
+                <p
+                    style="font-family:var(--font-display);font-size:1rem;font-style:italic;opacity:.6;line-height:1.5;margin-top:16px;">
+                    "Cada mensaje es un primer paso hacia tu transformación."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"><span>✦</span></div>
+
+    <!-- REDES SOCIALES -->
+    <section class="redes-section" id="redes">
+        <div class="redes-inner">
+            <div class="section-header reveal">
+                <span class="section-label">Redes sociales</span>
+                <h2 class="section-title">Encontrame en <em>las redes</em></h2>
+                <p>Seguime para contenido diario, meditaciones en vivo, novedades sobre cursos y mucha energía
+                    compartida.</p>
+            </div>
+
+            <div class="redes-grid">
+                <a class="red-card reveal" href="https://wa.me/5491161454942" target="_blank">
+                    <div class="red-card-icon"><img src="Source/Redes/whatsapp.png" alt="WhatsApp" /></div>
+                    <div class="red-card-name">WhatsApp</div>
+                    <div class="red-card-handle">+54 9 11 6145–4942</div>
+                </a>
+
+                <a class="red-card reveal" href="https://www.instagram.com/Natyamorterapias" target="_blank">
+                    <div class="red-card-icon"><img src="Source/Redes/instagram.png" alt="Instagram" /></div>
+                    <div class="red-card-name">Instagram</div>
+                    <div class="red-card-handle">@Natyamorterapias</div>
+                </a>
+
+                <a class="red-card reveal" href="https://www.facebook.com/Natyamorterapias" target="_blank">
+                    <div class="red-card-icon"><img src="Source/Redes/facebook.png" alt="Facebook" /></div>
+                    <div class="red-card-name">Facebook</div>
+                    <div class="red-card-handle">Natyamorterapias</div>
+                </a>
+
+                <a class="red-card reveal" href="https://www.youtube.com/@Natyamorterapias" target="_blank">
+                    <div class="red-card-icon"><img src="Source/Redes/youtube.png" alt="YouTube" /></div>
+                    <div class="red-card-name">YouTube</div>
+                    <div class="red-card-handle">Naty Amor Terapias</div>
+                </a>
+
+                <a class="red-card reveal" href="https://linktr.ee/Natyamorterapias" target="_blank">
+                    <div class="red-card-icon"><img src="Source/Redes/image-removebg-preview.png" alt="Linktree" />
+                    </div>
+                    <div class="red-card-name">Linktree</div>
+                    <div class="red-card-handle">Todos los enlaces</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBRESÍA -->
+    <section class="membresia-section" id="membresia">
+        <div class="membresia-inner">
+            <div class="section-header reveal">
+                <span class="section-label">Comunidad exclusiva</span>
+                <h2 class="section-title">Membresía <em>Natalia Amor</em></h2>
+                <p>Formá parte de una comunidad de almas que eligen crecer, expandirse y vibrar juntas.</p>
+            </div>
+
+            <div class="membresia-content">
+                <div class="membresia-text reveal">
+                    <p>
+                        La membresía es un espacio exclusivo para quienes desean un acompañamiento continuo en su
+                        proceso de transformación. Accedés a contenido premium, meditaciones exclusivas, encuentros en
+                        vivo y una comunidad que te sostiene.
+                    </p>
+                    <p>
+                        Es mucho más que un programa: es una familia de almas que elige transitar el camino de la
+                        expansión y la luz juntas, cada día, con amor y presencia.
+                    </p>
+                    <div class="membresia-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-dot"></div><span>Meditaciones exclusivas mensuales</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-dot"></div><span>Encuentros en vivo por Zoom</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-dot"></div><span>Grupo privado de WhatsApp</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-dot"></div><span>Descuentos especiales en sesiones y cursos</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-dot"></div><span>Material descargable exclusivo</span>
+                        </div>
+                    </div>
+                    <a class="btn-whatsapp" href="https://wa.me/5491161454942" target="_blank">Consultar membresía</a>
+                </div>
+                <div class="membresia-visual reveal">
+                    <div class="membresia-card">
+                        <div class="membresia-card-icon">✨</div>
+                        <div class="membresia-card-title">Membresía<br><em>Alma</em></div>
+                        <p class="membresia-card-desc">Un espacio de contención, crecimiento y amor para las almas que
+                            eligen expandirse.</p>
+                        <a class="btn-warm" href="https://wa.me/5491161454942" target="_blank">Quiero ser parte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="cta-final-inner reveal">
+            <div class="cta-final-text">
+                <span class="section-label">¿Lista para empezar?</span>
+                <h2 class="section-title">Tu transformación empieza con un <em>mensaje</em></h2>
+                <p>Escribime y encontramos juntas la mejor forma de acompañarte en tu proceso con amor y presencia.</p>
+            </div>
+            <div class="cta-buttons">
+                <a class="btn-whatsapp" href="https://wa.me/5491161454942" target="_blank">Escribir por WhatsApp</a>
+                <a class="btn-secondary" href="servicios.html">Ver servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a id="whatsapp-btn" class="whatsapp-float" href="https://wa.me/5491161454942" target="_blank"
+        rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.886a.5.5 0 0 0 .611.611l6.077-1.472A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.933 0-3.742-.524-5.288-1.434l-.375-.224-3.905.947.966-3.82-.245-.392A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+        </svg>
+        <span class="whatsapp-float-label">Escribime por WhatsApp</span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Natalia Amor · Terapias Energéticas &nbsp;·&nbsp; Buenos Aires, Argentina &nbsp;·&nbsp;
+            <a href="https://www.instagram.com/Natyamorterapias" target="_blank">Instagram</a> &nbsp;·&nbsp;
+            <a href="https://linktr.ee/Natyamorterapias" target="_blank">Linktree</a>
+        </p>
+    </footer>
+
+    <!-- SUB-FOOTER LEGAL -->
+    <div class="legal-footer">
+        <div class="legal-footer-inner">
+            <p><strong>Descargo de responsabilidad legal:</strong> Las terapias energéticas, iniciaciones, lecturas de
+                cartas natales y meditaciones ofrecidas en este sitio web son herramientas de armonización,
+                autoconocimiento y desarrollo personal. No constituyen tratamientos médicos, psiquiátricos o
+                psicológicos, ni reemplazan la consulta con profesionales de la salud matriculados. Si tenés alguna
+                condición médica o psicológica preexistente, te recomendamos consultar con tu médico de cabecera.
+                Natalia Amor no diagnostica ni receta medicamentos.</p>
+            <p class="copyright">© 2025 Natalia Amor · Todos los derechos reservados · Sitio Web diseñado con fines
+                profesionales e informativos.</p>
+        </div>
+    </div>
+
+    <script>
+        // Nav shadow on scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Hamburger mobile menu
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Mobile dropdown toggle
+        const dropdownTriggers = document.querySelectorAll('.nav-links > li.has-dropdown > a');
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 860) {
+                    e.preventDefault();
+                    const parent = trigger.parentElement;
+                    parent.classList.toggle('active-mobile-dropdown');
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
