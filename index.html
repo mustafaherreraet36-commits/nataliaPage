@@ -432,15 +432,15 @@
         .sobre-card {
             background: var(--color-warm);
             border-radius: 4px;
-            padding: 52px 44px;
+            padding: 40px 24px;
             position: relative;
         }
 
         .sobre-card::after {
             content: '';
             position: absolute;
-            bottom: -14px;
-            right: -14px;
+            bottom: -10px;
+            right: -10px;
             width: 100%;
             height: 100%;
             border: 1px solid var(--color-border);
@@ -450,7 +450,7 @@
 
         .sobre-card-icon {
             font-size: 2.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .sobre-card p {
@@ -553,11 +553,11 @@
         }
 
         .servicio-card {
-            background: var(--color-base);
             border: 1px solid var(--color-border);
             border-radius: 4px;
             padding: 40px 32px;
             transition: transform .25s, box-shadow .25s;
+            height: 500px;
         }
 
         .servicio-card:hover {
@@ -611,6 +611,317 @@
 
         .servicio-card.featured .serv-tag {
             background: var(--color-action);
+        }
+
+        #EMF_Bal {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Source/servicios/EMF-Balancing.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        #Tameana {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Source/servicios/Tameana.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        #Sakh_Majat {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Source/servicios/Sakh Majat.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        #EMF_Bal .serv-tag,
+        #Tameana .serv-tag,
+        #Sakh_Majat .serv-tag {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ── SERVICIOS ADICIONALES ──────────────────────────── */
+        .servicios-adicionales {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            margin-top: 64px;
+            padding-top: 64px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .modalidades-col {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .modalidad-item {
+            padding-left: 28px;
+            border-left: 2px solid var(--color-warm);
+            transition: border-color 0.3s ease;
+        }
+
+        .modalidad-item:hover {
+            border-left-color: var(--color-action);
+        }
+
+        .modalidad-subtitle {
+            display: block;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        .modalidad-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        .modalidad-desc {
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            opacity: 0.75;
+            margin-bottom: 18px;
+            max-width: 520px;
+        }
+
+        .modalidad-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            background: rgba(42, 43, 42, 0.05);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* YouTube Channel Widget */
+        .youtube-channel-preview {
+            display: block;
+            background: var(--color-base);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(42, 43, 42, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .youtube-channel-preview:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(42, 43, 42, 0.06);
+        }
+
+        .yt-preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+
+        .yt-profile-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .yt-profile-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--color-warm);
+        }
+
+        .yt-profile-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .yt-channel-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        .yt-channel-handle {
+            font-size: 0.72rem;
+            color: var(--color-text);
+            opacity: 0.6;
+        }
+
+        .yt-subscribe-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #FF0000;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .yt-subscribe-btn:hover {
+            background: #E60000;
+            transform: scale(1.03);
+        }
+
+        .yt-channel-intro {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            opacity: 0.75;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .yt-video-mockup {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 4px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2A2B2A 0%, #1e1f1e 100%);
+            margin-bottom: 18px;
+            cursor: pointer;
+        }
+
+        .yt-video-mockup::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('Source/servicios/Astrologia.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.45;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .yt-video-mockup:hover::before {
+            transform: scale(1.05);
+            opacity: 0.55;
+        }
+
+        .yt-video-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            z-index: 2;
+        }
+
+        .yt-video-tag {
+            align-self: flex-start;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: rgba(255, 0, 0, 0.85);
+            padding: 4px 8px;
+            border-radius: 2px;
+        }
+
+        .yt-play-button-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .yt-play-button {
+            width: 54px;
+            height: 54px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+        }
+
+        .yt-video-mockup:hover .yt-play-button {
+            transform: scale(1.15);
+            background: #FF0000;
+        }
+
+        .yt-play-button svg {
+            width: 20px;
+            height: 20px;
+            fill: #FF0000;
+            margin-left: 3px;
+            transition: fill 0.3s ease;
+        }
+
+        .yt-video-mockup:hover .yt-play-button svg {
+            fill: #ffffff;
+        }
+
+        .yt-video-title {
+            align-self: flex-start;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            font-weight: 500;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .yt-channel-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: rgba(42, 43, 42, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .youtube-channel-preview:hover .yt-channel-link-btn {
+            background: var(--color-text);
+            color: var(--color-base);
+            border-color: var(--color-text);
+        }
+
+        .yt-btn-icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
         }
 
         /* ── HERRAMIENTAS ──────────────────────────────────── */
@@ -1118,6 +1429,17 @@
                 grid-template-columns: 1fr;
             }
 
+            .servicios-adicionales {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                margin-top: 48px;
+                padding-top: 48px;
+            }
+
+            .modalidad-item {
+                padding-left: 20px;
+            }
+
             .herr-grid {
                 grid-template-columns: 1fr;
             }
@@ -1210,7 +1532,8 @@
         </div>
         <div class="hero-image">
             <div class="hero-image-inner">
-                <div class="hero-monogram">N</div>
+                <img src="Source/WhatsApp Image 2026-06-07 at 11.58.04.jpeg" alt="Natalia Amor - Terapeuta Energética"
+                    style="opacity: 70%;">
             </div>
             <p class="hero-image-caption">Energía · Amor · Transformación</p>
             <div class="hero-deco"></div>
@@ -1227,27 +1550,40 @@
     <section class="sobre" id="sobre">
         <div class="sobre-visual reveal">
             <div class="sobre-card">
-                <div class="sobre-card-icon">✨</div>
+                <div class="sobre-card-icon"><img src="Source/WhatsApp Image 2026-06-07 at 11.58.04.jpeg"
+                        alt="Natalia Amor - Terapeuta Energética" style="opacity: 70%;"></div>
                 <p>"Mi propuesta es que te animes a experimentar, expandir y vibrar. Abrazo en la energía de la luz y el
                     amor."</p>
             </div>
         </div>
         <div class="sobre-content reveal">
             <span class="section-label">Sobre mí</span>
-            <h2 class="section-title">Soy Natalia Amor,<br><em>Terapeuta Energética</em></h2>
-            <p>
-                Acompaño procesos de transformación y sanación a través de terapias energéticas que integran técnicas de
-                vanguardia con una mirada profunda y amorosa del ser humano.
-            </p>
-            <p>
-                En mi canal de YouTube encontrarás meditaciones guiadas propias del método EMF Balancing Technique,
-                meditaciones para conectar con tus recuerdos estelares, y también influencias del Mindfulness y la PNL —
-                Programación Neurolingüística.
-            </p>
-            <p>
-                Mi camino como coach energética nació de la búsqueda personal de herramientas de sanación reales y
-                transformadoras. Hoy las comparto contigo desde el amor.
-            </p>
+            <h2 class="section-title">Soy Natalia Amor<br></h2>
+
+            <p>Soy Natalia Amor, terapeuta holística, facilitadora energética y acompañante de procesos de
+                transformación personal.
+                Desde hace años acompaño a personas que desean recuperar su equilibrio, comprender sus procesos
+                emocionales y desarrollar
+                una conexión más profunda con su propia sabiduría interior.</p>
+
+            <p>Mi trabajo integra diferentes herramientas de crecimiento y expansión de consciencia, entre ellas la EMF
+                Balancing Technique,
+                Tameana, la Astrología Evolutiva Espiritual, el Mindfulness con Programación Neurolingüística y diversas
+                técnicas de
+                armonización energética. Todas herramientas de crecimiento, expansión de consciencia y armonización
+                energética,
+                orientadas al autoconocimiento, la transformación personal y el desarrollo del potencial humano.</p>
+
+            <p>A lo largo de mi recorrido he comprobado que cada persona posee dentro de sí misma los recursos
+                necesarios
+                para transformar su realidad. Mi tarea consiste en acompañar ese proceso, facilitando espacios de
+                escucha,
+                comprensión, equilibrio y desarrollo de potenciales.
+                Mi propósito es ofrecer herramientas que permitan integrar cuerpo, mente, emociones, energía, espíritu,
+                favoreciendo una vida más consciente, auténtica y alineada con el propósito personal.</p>
+
+            <p>¡Te doy la bienvenida a este espacio de aprendizaje, transformación y crecimiento!</p>
+            <!--
             <div class="creds">
                 <div class="cred-item">
                     <div class="cred-dot"></div><span>Profesora en EMF Balancing Technique, Fases I–VIII</span>
@@ -1265,6 +1601,7 @@
                     <div class="cred-dot"></div><span>Sesiones 1:1 presenciales y online</span>
                 </div>
             </div>
+            -->
             <div style="margin-top:32px;">
                 <a class="btn-secondary" href="sobre.html">Conocer mi historia completa →</a>
             </div>
@@ -1283,8 +1620,7 @@
             </div>
             <div class="servicios-grid">
 
-                <div class="servicio-card reveal">
-                    <div class="serv-icon">🌀</div>
+                <div class="servicio-card" id="EMF_Bal">
                     <h3 class="serv-title">EMF Balancing Technique</h3>
                     <p class="serv-desc">
                         Trabajo con el campo electromagnético humano (UCL) para potenciar la inteligencia y la sabiduría
@@ -1294,56 +1630,87 @@
                     <span class="serv-tag">Presencial · Online</span>
                 </div>
 
-                <div class="servicio-card featured reveal">
-                    <div class="serv-icon">💫</div>
-                    <h3 class="serv-title">Tameana & Sakh Majat</h3>
+                <div class="servicio-card" id="Tameana">
+                    <h3 class="serv-title">Tameana</h3>
                     <p class="serv-desc">
-                        Terapias de activación y expansión de conciencia que trabajan con geometría sagrada y conexiones
-                        estelares. Cada sesión es una puerta hacia tu origen y tu propósito más elevado.
+                        Trabajo vibracional profundo con cristales de cuarzo y geometría sagrada para elevar tu
+                        frecuencia. Una experiencia movilizante que rompe estructuras y limitaciones, alineándote con el
+                        flujo natural del Universo.
                     </p>
                     <span class="serv-tag">Sesión individual</span>
                 </div>
 
-                <div class="servicio-card reveal">
-                    <div class="serv-icon">⭐</div>
-                    <h3 class="serv-title">Astrología Espiritual</h3>
+                <div class="servicio-card" id="Sakh_Majat">
+                    <h3 class="serv-title">Sakh Majat</h3>
                     <p class="serv-desc">
-                        Tu carta natal como mapa de tu alma. Comprendemos los ciclos, talentos y misión que viniste a
-                        vivir en este plano, integrando la astrología como herramienta de crecimiento consciente.
+                        Sesiones de conexión que combinan cristales, códigos vibratorios y geometría sagrada. Una
+                        técnica profunda diseñada para activar tus fuerzas de autosanación, equilibrar tu energía y
+                        reconectarte con tu ser divino y potencial cósmico.
                     </p>
-                    <span class="serv-tag">Lectura personalizada</span>
+                    <span class="serv-tag">Sesión individual</span>
+                </div>
+            </div>
+
+            <div class="servicios-adicionales reveal">
+                <div class="modalidades-col">
+                    <div class="modalidad-item">
+                        <span class="modalidad-subtitle">Modalidad Individual</span>
+                        <h3 class="modalidad-title">Sesiones 1:1</h3>
+                        <p class="modalidad-desc">
+                            Acompañamiento personalizado en tu proceso de transformación. Sesiones online para todo el
+                            mundo o presenciales en un entorno de paz en Buenos Aires. Un espacio dedicado íntegramente
+                            a tu evolución.
+                        </p>
+                        <span class="modalidad-tag">Presencial · Online</span>
+                    </div>
+
+                    <div class="modalidad-item">
+                        <span class="modalidad-subtitle">Modalidad Grupal</span>
+                        <h3 class="modalidad-title">Talleres Grupales</h3>
+                        <p class="modalidad-desc">
+                            Experiencias colectivas de sanación y expansión. Compartir el camino y encontrarnos en grupo
+                            potencia la energía, creando un poderoso campo de transformación compartida.
+                        </p>
+                        <span class="modalidad-tag">Grupos reducidos</span>
+                    </div>
                 </div>
 
-                <div class="servicio-card reveal">
-                    <div class="serv-icon">🧘</div>
-                    <h3 class="serv-title">Sesiones 1:1</h3>
-                    <p class="serv-desc">
-                        Acompañamiento personalizado en tu proceso de transformación. Presencial en Buenos Aires u
-                        online desde cualquier lugar del mundo. El espacio es tuyo, el tiempo es tuyo.
-                    </p>
-                    <span class="serv-tag">Presencial · Online</span>
+                <div class="youtube-col">
+                    <a class="youtube-channel-preview" href="https://www.youtube.com/@Natyamorterapias" target="_blank">
+                        <div class="yt-preview-header">
+                            <div class="yt-profile-group">
+                                <img src="Source/WhatsApp Image 2026-06-07 at 11.58.04.jpeg" alt="Natalia Amor"
+                                    class="yt-profile-img">
+                                <div class="yt-profile-info">
+                                    <h4 class="yt-channel-name">Natalia Amor</h4>
+                                    <span class="yt-channel-handle">@Natyamorterapias</span>
+                                </div>
+                            </div>
+                            <span class="yt-subscribe-btn">Suscribirse</span>
+                        </div>
+                        <p class="yt-channel-intro">
+                            Accedé a meditaciones guiadas del método EMF Balancing Technique®, activaciones de origen
+                            estelar y prácticas gratuitas de Mindfulness y PNL.
+                        </p>
+                        <div class="yt-video-mockup">
+                            <div class="yt-video-overlay">
+                                <span class="yt-video-tag">Canal de YouTube</span>
+                                <span class="yt-video-title">Meditaciones & Contenido Gratuito</span>
+                            </div>
+                            <div class="yt-play-button-wrapper">
+                                <div class="yt-play-button">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yt-channel-link-btn">
+                            <img src="Source/Redes/youtube.png" alt="YouTube" class="yt-btn-icon">
+                            <span>Ver canal de YouTube</span>
+                        </div>
+                    </a>
                 </div>
-
-                <div class="servicio-card reveal">
-                    <div class="serv-icon">🌸</div>
-                    <h3 class="serv-title">Talleres Grupales</h3>
-                    <p class="serv-desc">
-                        Experiencias colectivas de sanación y expansión. Encontrarnos en grupo potencia la energía y
-                        crea un campo de transformación compartida. Consultá por próximas fechas.
-                    </p>
-                    <span class="serv-tag">Grupos reducidos</span>
-                </div>
-
-                <div class="servicio-card reveal">
-                    <div class="serv-icon">🎧</div>
-                    <h3 class="serv-title">Meditaciones Guiadas</h3>
-                    <p class="serv-desc">
-                        Accedé a meditaciones propias del método EMF Balancing Technique, activaciones de origen estelar
-                        y prácticas de Mindfulness y PNL en el canal de YouTube de manera gratuita.
-                    </p>
-                    <span class="serv-tag">Gratuito en YouTube</span>
-                </div>
-
             </div>
         </div>
     </section>
