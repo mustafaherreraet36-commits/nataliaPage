@@ -83,10 +83,30 @@
         }
 
         .nav-logo {
+            display: flex;
+            /* Alinea imagen y texto horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+            gap: 12px;
+            /* Espacio entre la imagen y el texto */
             font-family: var(--font-display);
             font-size: 1.4rem;
             font-weight: 500;
             letter-spacing: .04em;
+            text-decoration: none;
+            /* Elimina subrayado */
+            color: var(--color-text);
+        }
+
+        .logo-img {
+            width: 75px;
+            /* Tamaño de la imagen */
+            height: 55px;
+            border-radius: 20%;
+            /* Para que sea circular */
+            object-fit: cover;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            /* Borde muy sutil */
         }
 
         .nav-logo span {
@@ -413,110 +433,302 @@
             direction: ltr;
         }
 
-        .serv-row-img {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ── CONTENEDOR DE LA IMAGEN PRINCIPAL Y LOGO ───────────────────────── */
+        .serv-row-img-wrapper {
+            position: relative;
+            /* Necesario para posicionar el logo encima */
+            width: 100%;
+            max-width: 360px;
+            /* Ancho máximo de la foto rectangular */
+            margin: 0 auto;
         }
 
-        .serv-row-img img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+        /* ── IMAGEN PRINCIPAL (FOTO RECTANGULAR) ───────────────────────── */
+        .serv-main-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            /* Bordes ligeramente redondeados para la foto */
             object-fit: cover;
-            box-shadow: 0 20px 60px rgba(42, 43, 42, .12);
-            transition: transform .4s ease, box-shadow .4s ease;
+            display: block;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .serv-row-img img:hover {
-            transform: scale(1.04) rotate(2deg);
-            box-shadow: 0 28px 80px rgba(42, 43, 42, .18);
+        /* Efecto Hover aplicado a la imagen principal */
+        .serv-main-img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 28px 80px rgba(42, 43, 42, .4);
         }
 
-        /* Placeholder para servicios sin imagen */
-        .serv-img-placeholder {
-            width: 280px;
-            height: 280px;
+        /* ── LOGO SUPERPUESTO (BADGE) ───────────────────────── */
+        .serv-badge {
+            position: absolute;
+            top: -20px;
+            /* Sube el logo un poco por fuera del borde superior */
+            right: -20px;
+            /* Lo mueve hacia la derecha. Cambia a 'left: -20px' si lo prefieres del otro lado */
+            width: 110px;
+            /* Tamaño del logo */
+            height: 110px;
+
+            /* Hacemos que el contenedor del logo sea un círculo perfecto */
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-warm), #e8c99a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 5rem;
-            color: rgba(255, 255, 255, .5);
-            font-weight: 300;
-            box-shadow: 0 20px 60px rgba(42, 43, 42, .12);
+            overflow: hidden;
+            background-color: #ede7e1;
+            /* Fondo beige por si la imagen tarda en cargar */
+
+            /* Sombra sutil para despegar el logo de la foto principal */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+            /* Asegura que el logo quede por encima de la foto */
+
+            /* Añadimos una transición por si quieres que el logo también reaccione al hover */
         }
 
-        .serv-row-content {}
+        /* Ajustes de la imagen interna del logo para que no se corte el texto */
+        .serv-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Estira la zona central para cubrir el círculo */
+            border-radius: 0;
+            display: block;
+            transform: scale(1.05);
+        }
+
+        /* Opcional: Pequeño efecto en el logo al pasar el mouse por el contenedor general */
+        .serv-row-img-wrapper:hover .serv-badge {
+            transform: scale(1.) rotate(-5deg);
+        }
 
         .serv-number {
+
             font-family: var(--font-display);
+
             font-size: 5rem;
+
             font-weight: 300;
+
             color: var(--color-border);
+
             line-height: 1;
+
             margin-bottom: -8px;
+
         }
+
 
         .serv-row-title {
+
             font-family: var(--font-display);
+
             font-size: clamp(1.6rem, 3vw, 2.4rem);
+
             font-weight: 400;
+
             line-height: 1.15;
+
             margin-bottom: 18px;
+
         }
+
 
         .serv-row-title em {
+
             font-style: italic;
             color: var(--color-action);
+
         }
 
+
         .serv-row-desc {
+            position: relative;
             font-size: .9rem;
             line-height: 1.85;
             opacity: .72;
             margin-bottom: 24px;
+            padding-left: 24px;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
+
+        .serv-row-desc::before {
+            /* Código Unicode para un corazón delineado estilizado */
+            content: "\2661";
+
+            /* Si prefieres un corazón relleno, usa este en su lugar: content: "\2665"; */
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            /* Estilos personalizados */
+            color: #bc9680;
+            /* Cambia esto por el código hexadecimal de tu paleta beige/marrón */
+            font-size: 1.2rem;
+            /* Tamaño del corazón */
+            font-weight: bold;
+            line-height: 1;
+        }
+
 
         .serv-row-tags {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
+
             margin-bottom: 28px;
+
         }
+
 
         .serv-tag {
+
             display: inline-block;
+
             font-size: .65rem;
+
             letter-spacing: .12em;
+
             text-transform: uppercase;
+
             padding: 5px 14px;
+
             background: var(--color-warm);
+
             border-radius: 20px;
+
         }
+
 
         .serv-tag.dark {
+
             background: var(--color-text);
+
             color: var(--color-base);
+
         }
+
+        /* ── WIDGET DE YOUTUBE ───────────────────────── */
+        .youtube-widget {
+            background-color: #f0e6e0;
+            /* Un blanco muy sutilmente cálido */
+            border: 1px solid #ede7e1;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            /* Sombra suave para que resalte */
+        }
+
+        .yt-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .yt-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .yt-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            /* Empuja el botón hacia la derecha */
+        }
+
+        .yt-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            /* Usa el color principal de tu texto */
+            line-height: 1.2;
+        }
+
+        .yt-handle {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .yt-subscribe {
+            background-color: #bc9680;
+            /* El color de tu paleta */
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .yt-subscribe:hover {
+            background-color: #a37d68;
+            /* Un tono un poco más oscuro para el hover */
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor responsivo para el iframe (mantiene proporción 16:9) */
+        .yt-video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* Proporción estándar de YouTube */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #000;
+            /* Fondo negro mientras carga el video */
+        }
+
+        .yt-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
 
         .btn-outline {
+
             display: inline-block;
+
             border: 1px solid var(--color-text);
+
             padding: 11px 26px;
+
             font-size: .75rem;
+
             letter-spacing: .12em;
+
             text-transform: uppercase;
+
             font-weight: 400;
+
             border-radius: 2px;
+
             transition: background .2s, color .2s;
+
         }
 
+
         .btn-outline:hover {
+
             background: var(--color-text);
+
             color: var(--color-base);
+
         }
 
         /* ── CTA FINAL ─────────────────────────────────────── */
@@ -877,7 +1089,10 @@
 
     <!-- NAV -->
     <nav id="nav">
-        <a class="nav-logo" href="index.html">Natalia<span>Amor</span></a>
+        <a class="nav-logo" href="index.html">
+            <img src="Source/Logo - Firma.jpeg" alt="Logo Naty Amor" class="logo-img">
+            Natalia<span>Amor</span>
+        </a>
         <ul class="nav-links" id="nav-links">
             <li class="has-dropdown">
                 <a href="sobre.html">Sobre Mí</a>
@@ -948,6 +1163,10 @@
                 <span class="icon-pill-label">Iniciaciones</span>
             </a>
             -->
+            <a href="#astrologia" class="icon-pill">
+                <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56.jpeg" alt="Astrología Espiritual" />
+                <span class="icon-pill-label">Astrología</span>
+            </a>
             <a href="#tameana" class="icon-pill">
                 <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (1).jpeg" alt="Cristales Tameana" />
                 <span class="icon-pill-label">Tameana</span>
@@ -955,10 +1174,6 @@
             <a href="#sakh-majat" class="icon-pill">
                 <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (2).jpeg" alt="Cristales Sakh Majat" />
                 <span class="icon-pill-label">Sakh Majat</span>
-            </a>
-            <a href="#astrologia" class="icon-pill">
-                <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56.jpeg" alt="Astrología Espiritual" />
-                <span class="icon-pill-label">Astrología</span>
             </a>
             <a href="#meditaciones" class="icon-pill">
                 <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (3).jpeg" alt="Meditaciones" />
@@ -994,21 +1209,44 @@
 
             <!-- 01 — EMF BALANCING -->
             <div class="serv-row reveal" id="balancing">
-                <div class="serv-row-img">
-                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.55 (3).jpeg" alt="EMF Balancing Technique" />
+                <div class="serv-row-img-wrapper">
+                    <img class="serv-main-img" src="Source/servicios/EMF-Balancing.jpeg"
+                        alt="EMF Balancing Technique" />
+
+                    <div class="serv-badge">
+                        <img src="Source/WhatsApp Image 2026-06-06 at 12.29.55 (3).jpeg" alt="Logo EMF" />
+                    </div>
                 </div>
                 <div class="serv-row-content">
                     <div class="serv-number">01</div>
                     <h2 class="serv-row-title">EMF Balancing<br><em>Technique®</em></h2>
                     <p class="serv-row-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Sesiones de Armonización en donde trabajamos desde y hacia el amor y el potencial infinito
+                        dentro de
+                        cada uno de nosotros.
+
+                        La sesión se basa en una tecnica que esta especialmente canalizada para armonizar y equilibrar
+                        tu
+                        Entramado de Calibración Universal, que es el campo energético - electromagnético humano
+                        (Electro-Magnetic-Field Balance), compuesto por un entramado de fibras de luz y energía que
+                        rodean
+                        completamente al cuerpo a una distancia de 60 cm (conformando lo que conocemos como el aura
+                        energético).
                     </p>
                     <p class="serv-row-desc">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
+                        Cada sesión tiene como resultado el fortalecimiento del Entramado de luz, permitiendo al
+                        consultante
+                        sostener una carga eléctrica mayor de la que antes podía sostener. Permite ordenarnos, integrar
+                        e
+                        irradiar mayor energía desde nuestro Canal Central, equilibrando y armonizando las fibras de luz
+                        de nuestra historia, nuestro presente y nuestros logros y potenciales, para co-crear una vida
+                        más
+                        iluminada!
+
+                        Si las primeras cuatro fases de la EMF Balancing Technique® trabajan la "Evolución de la
+                        conciencia"
+                        y crean un fundamento energético para apoyar tu habilidad de "co-crear la vida más iluminada que
+                        puedas"; el enfoque de las Fases V-VIII es el de "Practicar Maestría en la vida diaria".
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag">Presencial · Online</span>
@@ -1017,23 +1255,94 @@
                     <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
                 </div>
             </div>
-
-            <!-- 02 — TAMEANA -->
-            <div class="serv-row reverse reveal" id="tameana">
-                <div class="serv-row-img">
-                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (1).jpeg" alt="Cristales Tameana" />
+            <!-- 02 — ASTROLOGÍA ESPIRITUAL -->
+            <div class="serv-row reverse reveal" id="astrologia">
+                <div class="serv-row-img-wrapper">
+                    <img class="serv-main-img" src="Source/servicios/Astrologia.jpeg" alt="Astrología Espiritual" />
+                    <div class="serv-badge">
+                        <img src="Source\WhatsApp Image 2026-06-06 at 12.29.56.jpeg" alt="Logo EMF" />
+                    </div>
                 </div>
                 <div class="serv-row-content">
                     <div class="serv-number">02</div>
-                    <h2 class="serv-row-title">Tameana &<br><em>Cristales</em></h2>
+                    <h2 class="serv-row-title">Astrología<br><em>Espiritual</em></h2>
                     <p class="serv-row-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia
-                        voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                        voluptatem sequi nesciunt.
+                        Sesiones en donde podremos entender junt@s que el zodiaco y el sistema planetario no están
+                        afuera,
+                        sino que son espejos de como nosotros estamos organizados espiritual, emocional, mental y
+                        físicamente. 
+                        Abordaremos entonces, a traves del conocimiento de tu propia carta natal, una sesion de
+                        autoconocimiento
+                        que te permitirá conocerte mas a vos mismo y tambien saber de donde venis y hacia donde podes
+                        llegar,
+                        utilizando todas las herramientas que tenes a disposición, como potencial. En esta sesion
+                        aprenderemos
+                        que si bien estamos acostumbrados a observar el mundo hacia afuera, podemos ahora empezar
+                        a observar el
+                        mundo hacia adentro, empoderarnos y poder conectarnos con nuestro ser. En este sentido
+                        comprenderemos que
+                        los planetas no determinan nuestra vida, sino que éstos describen capacidades, potenciales,
+                        ciclos,
+                        tiempos para que de alguna manera podamos organizarnos mejor en nuestra vida cotidiana.
                     </p>
                     <p class="serv-row-desc">
-                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                        sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                        La sesion tambien te enseñara que tu Carta Natal representa el momento en que el ser nace y se
+                        sellan
+                        las tendencias y los potenciales que trae. Que el individuo no nace en cualquier
+                        momento, sino cuando el
+                        sistema planetario, fiel reflejo de las representaciones de nuestro espíritu, le otorgan al
+                        individuo
+                        esas tendencias  para hacer una experiencia de vida unica, particula y especial. Por
+                        ultimo alcanzaremos
+                        a comprender que nuestra Carta nos muestra el pasado y no el futuro; ya que la posición de los
+                        planetas en la carta describen hasta donde ese individuo pudo integrar en su consciencia y en su
+                        alma
+                        los potenciales que la vida le ha dado. Pondremos especial atencion en los potenciales que el
+                        individuo
+                        todavía no ha podido integrar en sus aprendizajes; pero que ahora, gracias a la toma de
+                        conciencia, tendra 
+                        la oportunidad de ordenar e integrar en su vida cotidiana, y asi acceder a una comprensión mayor
+                        de 
+                        su relación con el cosmos.
+                    </p>
+                    <div class="serv-row-tags">
+                        <span class="serv-tag">Lectura personalizada</span>
+                        <span class="serv-tag">Online</span>
+                    </div>
+                    <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
+                </div>
+            </div>
+            <!-- 03 — TAMEANA -->
+            <div class="serv-row reveal" id="tameana">
+                <div class="serv-row-img-wrapper">
+                    <img class="serv-main-img" src="Source/servicios/Tameana.jpeg" alt="Cristales Tameana" />
+                    <div class="serv-badge">
+                        <img src="Source\WhatsApp Image 2026-06-06 at 12.29.56 (1).jpeg" alt="Logo EMF" />
+                    </div>
+                </div>
+                <div class="serv-row-content">
+                    <div class="serv-number">03</div>
+                    <h2 class="serv-row-title">Tameana &<br><em>Cristales</em></h2>
+                    <p class="serv-row-desc">
+                        Sesiones vibracionales y conscientes, en donde se utilizan cristales de cuarzo por su enorme
+                        capacidad para emitir frecuencias y símbolos, acorde a escalas vibratorias, en donde el ser
+                        humano es un vehículo de transmisión, de conciencia y de geometría sagrada. Es un trabajo
+                        profundo y movilizante a nivel físico, emocional y de amplia apertura en el plano espiritual.
+                    </p>
+                    <p class="serv-row-desc">
+                        En el Nivel 1 "Salush Nahi" ó "Triángulo Sagrado" se genera junto al "triángulo" una gran
+                        condensación de energía que logra romper estructuras, temores y cualquier tipo de limitación. Es
+                        una experiencia vibracional profunda donde se usan las propiedades amplificadoras de los
+                        cristales de Cuarzos, dispuestos geométricamente alrededor de una persona. También se usan
+                        sonidos, Símbolos Maestros y Geometría Sagrada. Es un trabajo profundo que equilibra el cuerpo
+                        físico, movilizando los aspectos emocionales y dando una amplia apertura en el plano espiritual.
+                    </p>
+                    <p class="serv-row-desc">
+                        En el Nivel 2 "Ma'hat" ó "Las Puertas del Alma" se trabaja con un hexágono, y el eje de todo el
+                        trabajo vibracional se centra en el corazón como puerta de consciencia y comprensión. Ma ´at es
+                        una estructura sagrada que simboliza la contención. Es una puerta que abre nuestra Consciencia
+                        al flujo natural del Universo y nos alinea con los procesos de cambio de nuestro planeta
+                        generando sincronización con la transformación que esta ocurriendo.
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag">Sesión individual</span>
@@ -1044,21 +1353,37 @@
             </div>
 
             <!-- 03 — SAKH MAJAT -->
-            <div class="serv-row reveal" id="sakh-majat">
-                <div class="serv-row-img">
-                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (2).jpeg" alt="Cristales Sakh Majat" />
+            <div class="serv-row reverse reveal" id="sakh-majat">
+                <div class="serv-row-img-wrapper">
+                    <img class="serv-main-img" src="Source\servicios\Sakh Majat.jpeg" alt="Cristales Sakh Majat" />
+                    <div class="serv-badge">
+                        <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (2).jpeg" alt="Logo EMF" />
+                    </div>
                 </div>
                 <div class="serv-row-content">
-                    <div class="serv-number">03</div>
+                    <div class="serv-number">04</div>
                     <h2 class="serv-row-title">Sakh Majat<br><em>I & II</em></h2>
                     <p class="serv-row-desc">
-                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                        ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate
-                        velit esse.
+                        Sesiones de conexión en donde se trabaja con cristales de cuarzo, geometría sagrada y códigos
+                        vibratorios específicos que, trabajando en conjunto, te asistirán a alinearte con tu canal y con
+                        frecuencias elevadas.
                     </p>
                     <p class="serv-row-desc">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
+
+                        En el caso de "Sakh Majat I, la pirámide de Sirio" hablamos de una técnica simple que utiliza
+                        cuatro cristales de cuarzo que hacen las veces de canalizadores de energía. A través de ellos se
+                        genera una estructura/geometría vibracional, que permite que la persona reciba, no sólo la
+                        frecuencia que estamos generando en ese preciso instante sino que también se recibe la
+                        asistencia de guías de alta vibración. Está dirigida a aquellas personas que buscan una real
+                        transformación en sus vidas, despertando sus fuerzas de autosanación y su potencial como seres
+                        cósmicos.
+                    </p>
+                    <p class="serv-row-desc">
+                        En el caso de "Sakh’ Majat 2, la estrella de Sirio" hablamos de una técnica que utiliza 8
+                        cristales de cuarzo y una piedra amatista, que pone especial atención en el despertar de nuestro
+                        ser estelar, a través de la integración de la energía femenina (Isis) con la masculina (Osiris),
+                        para dar paso a la integración de ambas (Horus), un ser solar que nos empodera y reconecta con
+                        el ser divino y radiante que somos.
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag">Iniciaciones</span>
@@ -1068,30 +1393,6 @@
                 </div>
             </div>
 
-            <!-- 04 — ASTROLOGÍA ESPIRITUAL -->
-            <div class="serv-row reverse reveal" id="astrologia">
-                <div class="serv-row-img">
-                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56.jpeg" alt="Astrología Espiritual" />
-                </div>
-                <div class="serv-row-content">
-                    <div class="serv-number">04</div>
-                    <h2 class="serv-row-title">Astrología<br><em>Espiritual</em></h2>
-                    <p class="serv-row-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris.
-                    </p>
-                    <p class="serv-row-desc">
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                    </p>
-                    <div class="serv-row-tags">
-                        <span class="serv-tag">Lectura personalizada</span>
-                        <span class="serv-tag">Online</span>
-                    </div>
-                    <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
-                </div>
-            </div>
 
             <!-- 05 — MEDITACIONES GUIADAS -->
             <div class="serv-row reveal" id="meditaciones">
@@ -1102,45 +1403,95 @@
                     <div class="serv-number">05</div>
                     <h2 class="serv-row-title">Meditaciones<br><em>Guiadas</em></h2>
                     <p class="serv-row-desc">
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Disponibles de forma
-                        gratuita en YouTube.
+                        Bienvenid@s! Mi nombre es Naty Amor, soy Terapeuta Energetica y en este canal vas a
+                        encontrar meditaciones guiadas y videos que van de la mano de las herramienta de sanación
+                        que facilito.
                     </p>
                     <p class="serv-row-desc">
-                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                        ut aliquid ex ea commodi consequatur. EMF Balancing, activaciones estelares y Mindfulness.
+                        Por un lado: videos introductorios sobre mis terapias; luego meditaciones propias del metodo
+                        "Emf Balancing Technique"; meditaciones guiadas con influencias del Mindfullnes, y meditaciones
+                        sistemicas básicas para Sanar tu Niño interior, Sanar con Mamá y Papá y otras meditaciones
+                        inspiradas en trabajos de Constelaciones Familiares.
+                    </p>
+                    <p class="serv-row-desc">
+                        Esperando que la propuesta de transitar este camino junt@s te haya resonado, te invito a que
+                        te
+                        animes a experimentar, expandir y vibrar tambien junt@s!. Abrazo en la energía de la luz y el
+                        amor!
+                        Y aqui estamos!
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag dark">Gratuito en YouTube</span>
                         <span class="serv-tag">EMF · Mindfulness · PNL</span>
                     </div>
-                    <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver canal en
-                        YouTube →</a>
+                    <!-- <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver canal en
+                        YouTube →</a> -->
+                    <div class="youtube-widget">
+                        <div class="yt-header">
+                            <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (3).jpeg" alt="Naty Amor"
+                                class="yt-avatar">
+                            <div class="yt-info">
+                                <span class="yt-name">Naty Amor Terapias</span>
+                                <span class="yt-handle">@Natyamorterapias</span>
+                            </div>
+                            <a href="https://www.youtube.com/@Natyamorterapias" target="_blank" class="yt-subscribe">
+                                Visitar Canal
+                            </a>
+                        </div>
+
+                        <div class="yt-video-container">
+                            <iframe src="https://www.youtube.com/embed/Sj8LgTnvX30?rel=0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
             <!-- 06 — TALLERES GRUPALES -->
             <div class="serv-row reverse reveal" id="talleres">
                 <div class="serv-row-img">
-                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (4).jpeg" alt="Talleres Grupales" />
+                    <img src="Source/WhatsApp Image 2026-06-06 at 12.29.56 (4).jpeg"
+                        alt="Curso Taller Técnica de Equilibrio" />
                 </div>
                 <div class="serv-row-content">
                     <div class="serv-number">06</div>
-                    <h2 class="serv-row-title">Talleres<br><em>Grupales</em></h2>
+                    <h2 class="serv-row-title">Curso Taller<br><em>Técnica de Equilibrio</em></h2>
+
                     <p class="serv-row-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Encontrarnos en grupo potencia la energía y crea un campo de
-                        transformación compartida.
+                        ¡Bienvenid@ a esta experiencia de autoconocimiento, recalibración, equilibrio energético,
+                        reconexión y transformación! Es un verdadero honor acompañarte en este recorrido enriquecido por
+                        más de 15 años de práctica, estudio y acompañamiento de procesos de crecimiento personal.
                     </p>
+
                     <p class="serv-row-desc">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Consultá por próximas fechas y grupos disponibles.
+                        Este programa ha sido diseñado para ayudarte a fortalecer tu conexión contigo mism@, comprender
+                        tu entramado energético o "cuerpo de luz" y recorrer un camino de mayor consciencia, equilibrio
+                        y expansión para co-crear la nueva vida que deseas y mereces.
                     </p>
+
+                    <p class="serv-row-desc">
+                        A lo largo del recorrido, dividido en Módulos, encontrarás material teórico, gráficos
+                        explicativos, decretos de transformación, ejercicios de integración, meditaciones guiadas y
+                        sesiones energéticas especialmente organizadas para acompañar cada etapa del proceso.
+                    </p>
+
+                    <p class="serv-row-desc">
+                        Confía en tu proceso. Permítete observar, sentir, descubrir y registrar aquello que se vaya
+                        revelando a lo largo del camino. Gracias por elegirte y permitirte iniciar este viaje hacia una
+                        versión más consciente, equilibrada y alineada de ti mism@.
+                    </p>
+
                     <div class="serv-row-tags">
-                        <span class="serv-tag">Grupos reducidos</span>
-                        <span class="serv-tag">Presencial</span>
+                        <span class="serv-tag">Curso en Módulos</span>
+                        <span class="serv-tag dark">Autoconocimiento</span>
                     </div>
-                    <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Consultar fechas →</a>
+
+                    <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Consultar por el curso
+                        →</a>
                 </div>
             </div>
 

@@ -450,6 +450,28 @@
             margin-bottom: 20px;
         }
 
+        .firma-estilo-carta {
+            width: 300px;
+            /* Tamaño mucho más sutil */
+            height: auto;
+            filter: grayscale(20%) opacity(0.8);
+            /* Le da un toque más artístico */
+            margin: 40px auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        /* Esto asegura que la firma herede la animación de entrada */
+        .firma-estilo-carta.reveal {
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        /* Cuando el script añade la clase 'visible', la imagen aparece */
+        .firma-estilo-carta.reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* ── VALORES ───────────────────────────────────────── */
         .valores {
             background: #f9f5f0;
@@ -1200,6 +1222,10 @@
         </div>
     </section>
 
+    <section class="firma-final">
+        <img src="Source/Logo - Firma.jpeg" alt="Firma Naty Amor" class="firma-estilo-carta reveal">
+    </section>
+
     <div class="divider"><span>✦</span></div>
 
     <!-- VALORES
@@ -1270,53 +1296,57 @@
             <div class="timeline-item reveal">
                 <div class="timeline-dot-wrap">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-year">2024</span>
+                    <span class="timeline-year">2014</span>
                 </div>
                 <div class="timeline-body">
                     <h4 class="timeline-title">EMF Balancing Technique® — Fases I a VIII</h4>
-                    <p class="timeline-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip.</p>
+                    <p class="timeline-desc">"Despues de un reset profundo de #sanción que cambiaría mi #vida, desde
+                        el 2012 al 2016, de la mano de mi querida guia y maestra Ana Maria Frallicciardi ,
+                        @aguilaazul.ok , todo comenzaría a transformarse y acelerarse. Y de la mano de la
+                        #emfbalancingtechnique® (Técnica de Equilibrio del Campo Electro Magnético Humano) no solo
+                        reconectaría con mi cuerpo de #luz, #energia, aprendería como ordenar y alinear diariamente mi
+                        Entramado de Calibracion Universal, sino que además me formaría en las Fases I - IV de la
+                        técnica y empezaría a expandir esa maravillosa herramienta de sanación a otr@s!. Las prácticas
+                        como profesional Balancing comenzarían allí, integrando #energías y recordando mas de quién era.
+                        Y la historia que estaba comenzando, continuaría"...
+                    </p>
                 </div>
             </div>
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot-wrap">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-year">2023</span>
+                    <span class="timeline-year">2016</span>
                 </div>
                 <div class="timeline-body">
                     <h4 class="timeline-title">Tameana & Sakh Majat — Niveles I y II</h4>
-                    <p class="timeline-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa
-                        qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="timeline-desc">"Tras esa formación increíble en la tecnica de equilibrio energético
+                        #emfbalancingtechnique, llegarían otros #recuerdos, de la mano de mi queridisimo guia, maestro y
+                        astrólogo Jorge Saco. Alli pude comprender que el #zodiaco y el #sistemaplanetario no estaban
+                        afuera, sino que eran espejos de como nosotros estabamos organizados espiritual, emocional,
+                        mental y físicamente. Pude acceder así a una comprensión mayor de nuestra relación con el
+                        #cosmos. La expansión continuaría, de la mano de la #astrologíaespiritual, las #cartasnatales, y
+                        un mayor conocimiento de la luz mayor, dentro de la luz terrenal, que aqui somos"..</p>
                 </div>
             </div>
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot-wrap">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-year">2022</span>
+                    <span class="timeline-year">2018</span>
                 </div>
                 <div class="timeline-body">
                     <h4 class="timeline-title">Astrología Espiritual</h4>
-                    <p class="timeline-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                        doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi
-                        architecto beatae vitae.</p>
+                    <p class="timeline-desc">"Tras esa formación increíble en la tecnica de equilibrio energético
+                        #emfbalancingtechnique, llegarían otros #recuerdos, de la mano de mi queridisimo guia, maestro y
+                        astrólogo Jorge Saco. Alli pude comprender que el #zodiaco y el #sistemaplanetario no estaban
+                        afuera, sino que eran espejos de como nosotros estabamos organizados espiritual, emocional,
+                        mental y físicamente. Pude acceder así a una comprensión mayor de nuestra relación con el
+                        #cosmos. La expansión continuaría, de la mano de la #astrologíaespiritual, las #cartasnatales, y
+                        un mayor conocimiento de la luz mayor, dentro de la luz terrenal, que aqui somos"..</p>
                 </div>
             </div>
 
-            <div class="timeline-item reveal">
-                <div class="timeline-dot-wrap">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-year">2021</span>
-                </div>
-                <div class="timeline-body">
-                    <h4 class="timeline-title">Mindfulness & PNL — Programación Neurolingüística</h4>
-                    <p class="timeline-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
-                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro.</p>
-                </div>
-            </div>
 
             <div class="timeline-item reveal">
                 <div class="timeline-dot-wrap">
@@ -1325,9 +1355,16 @@
                 </div>
                 <div class="timeline-body">
                     <h4 class="timeline-title">Inicio del camino de sanación personal</h4>
-                    <p class="timeline-desc">Ut enim ad minima veniam quis nostrum exercitationem ullam corporis
-                        suscipit laboriosam nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure
-                        reprehenderit qui in ea voluptate.</p>
+                    <p class="timeline-desc">."Gaia continuaría elevando su frecuencia vibratoria, los #hermanosmayores
+                        seguirían asistiéndonos, e irímos conociendo a más y más #guías y #maestros, más y más
+                        #canalesestelares. Así llegarían a mí, en el 2019 no solo las frecuencias provenientes de las
+                        #pléyades, sino también de la estrella #sirio y conocería el hermoso, amoroso y profundo trabajo
+                        de Ariel Leon @ariel_leon888, canalizador de la técnica #sakhmajat, entre otras. Llegarían
+                        primero las sesiones de conexión grupales, luego la formación en Sakh Majat 1 #lapiramidedesirio
+                        con Ariel, y luego, Sakh Majat 2 #laestrelladesirio, de la mano de Andrea Sirio @sirioandrea. Y,
+                        trabajando con los amorosos #cristales de #cuarzo, empezaríamos a invocar a los amorosos médicos
+                        de energía siriana, para que profundicemos nuestra armonía con #gaia y el #cosmos.. Comenzaría,
+                        como dice Ariel: "El principio del cambio".....</p>
                 </div>
             </div>
 
