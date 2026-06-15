@@ -1446,6 +1446,14 @@
                 display: block;
             }
 
+            .nav-links li:hover .dropdown {
+                transform: none;
+            }
+
+            .nav-links li.mobile-home {
+                display: block !important;
+            }
+
             .dropdown a {
                 padding: 8px 0;
                 font-size: 0.8rem;
@@ -1522,6 +1530,7 @@
             Natalia<span>Amor</span>
         </a>
         <ul class="nav-links" id="nav-links">
+            <li class="mobile-home" style="display: none;"><a href="index.html">Home</a></li>
             <li class="has-dropdown">
                 <a href="sobre.html">Sobre Mí</a>
                 <ul class="dropdown">

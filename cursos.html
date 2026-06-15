@@ -433,7 +433,7 @@
         }
 
         .curso-card-icon {
-            font-size: 4rem;
+            width: 100%;
             margin-bottom: 20px;
         }
 
@@ -930,6 +930,14 @@
                 display: block;
             }
 
+            .nav-links li:hover .dropdown {
+                transform: none;
+            }
+
+            .nav-links li.mobile-home {
+                display: block !important;
+            }
+
             .dropdown a {
                 padding: 8px 0;
                 font-size: 0.8rem;
@@ -996,6 +1004,7 @@
             Natalia<span>Amor</span>
         </a>
         <ul class="nav-links" id="nav-links">
+            <li class="mobile-home" style="display: none;"><a href="index.html">Home</a></li>
             <li class="has-dropdown">
                 <a href="sobre.html">Sobre Mí</a>
                 <ul class="dropdown">
@@ -1078,7 +1087,7 @@
             <div class="curso-block reveal" id="tecnica-equilibrio">
                 <div class="curso-visual">
                     <div class="curso-card-visual">
-                        <div class="curso-card-icon">⚖️</div>
+                        <img src="Source/servicios/Tecnica-Equilibrio.png" class="curso-card-icon">
                         <div class="curso-card-name">Técnica de<br><em>Equilibrio</em></div>
                         <span class="curso-card-badge">Curso Online · A tu ritmo</span>
                     </div>
@@ -1126,7 +1135,7 @@
                 <div class="curso-visual">
                     <div class="curso-card-visual"
                         style="background: linear-gradient(145deg, var(--color-action), #7ba8d8);">
-                        <div class="curso-card-icon">💎</div>
+                        <img src="Source/servicios/Tecnica-Tameana.png" class="curso-card-icon">
                         <div class="curso-card-name" style="color: var(--color-base);">Tameana<br><em
                                 style="color: var(--color-warm);">Nivel I</em></div>
                         <span class="curso-card-badge">Iniciación · Online</span>
