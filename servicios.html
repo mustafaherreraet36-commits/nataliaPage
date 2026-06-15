@@ -609,6 +609,109 @@
 
         }
 
+
+        /* Estilo para la lista de servicios */
+        .serv-list {
+            list-style: none;
+            /* Quitamos los puntos por defecto */
+            padding-left: 20px;
+            /* Esto genera la sangría */
+            margin: 10px 0 20px 0;
+        }
+
+        .serv-list li {
+            position: relative;
+            font-size: .93rem;
+            line-height: 1.85;
+            opacity: .8;
+            margin-bottom: 8px;
+            padding-left: 15px;
+        }
+
+        /* Creamos un punto personalizado elegante */
+        .serv-list li::before {
+            content: "•";
+            color: var(--color-action);
+            /* Usa el color de acento de tu web */
+            font-weight: bold;
+            display: inline-block;
+            width: 15px;
+            margin-left: -15px;
+        }
+
+        /* 1. Preparamos el contenedor principal sin romper su grid interno */
+        #meditaciones {
+            position: relative;
+            border-bottom: none;
+            /* Opcional: quita la línea divisoria para que el fondo respire mejor */
+        }
+
+        /* 2. Creamos un fondo falso que ignora a los padres y ocupa toda la pantalla */
+        #meditaciones::before {
+            content: "";
+            position: absolute;
+            top: 0;
+
+            /* El truco definitivo para romper el margen/padding del padre: */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+
+            /* Combinamos la capa de opacidad (filtro) y la imagen en una sola línea */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5)), url('Source/servicios/Meditaciones.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+            /* Nos aseguramos de que quede detrás del texto y la imagen */
+        }
+
+        /* Este es el contenedor que define el tamaño y la forma (círculo o cuadrado redondeado) */
+        #meditaciones .serv-row-img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /* O 8px si es cuadrado */
+            overflow: hidden;
+            /* ESTO ES LO QUE CORTA EL ZOOM */
+
+            /* IMPORTANTE: Fuerza al navegador a reconocer este elemento como un límite de recorte */
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        /* Esta es la imagen que tiene el zoom */
+        #meditaciones .serv-row-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            /* El zoom constante */
+            transform: scale(1.15);
+
+            /* Esto evita que la imagen "tiemble" o parpadee al renderizarse */
+            backface-visibility: hidden;
+        }
+
+        #meditaciones .serv-row-content {
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgb(250, 250, 250, 0.8);
+        }
+
+
+        /* 6. Aseguramos legibilidad para el widget de YouTube */
+        .youtube-widget {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+
+
         /* ── WIDGET DE YOUTUBE ───────────────────────── */
         .youtube-widget {
             background-color: #f0e6e0;
@@ -727,6 +830,73 @@
 
             color: var(--color-base);
 
+        }
+
+
+
+
+
+        /* 1. Preparamos el contenedor principal sin romper su grid interno */
+        #talleres {
+            position: relative;
+            border-bottom: none;
+            /* Opcional: quita la línea divisoria para que el fondo respire mejor */
+
+        }
+
+        /* 2. Creamos un fondo falso que ignora a los padres y ocupa toda la pantalla */
+        #talleres::before {
+            content: "";
+            position: absolute;
+            top: 0;
+
+            /* El truco definitivo para romper el margen/padding del padre: */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+
+            /* Combinamos la capa de opacidad (filtro) y la imagen en una sola línea */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(50, 50, 50, 0.5)), url('Source/servicios/Talleres.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+            /* Nos aseguramos de que quede detrás del texto y la imagen */
+        }
+
+        /* Este es el contenedor que define el tamaño y la forma (círculo o cuadrado redondeado) */
+        #talleres .serv-row-img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /* O 8px si es cuadrado */
+            overflow: hidden;
+            /* ESTO ES LO QUE CORTA EL ZOOM */
+
+            /* IMPORTANTE: Fuerza al navegador a reconocer este elemento como un límite de recorte */
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        /* Esta es la imagen que tiene el zoom */
+        #talleres .serv-row-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            /* El zoom constante */
+            transform: scale(1.15);
+
+            /* Esto evita que la imagen "tiemble" o parpadee al renderizarse */
+            backface-visibility: hidden;
+        }
+
+        #talleres .serv-row-content {
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         /* ── CTA FINAL ─────────────────────────────────────── */
@@ -1222,32 +1392,27 @@
                     <div class="serv-number">01</div>
                     <h2 class="serv-row-title">EMF Balancing<br><em>Technique®</em></h2>
                     <p class="serv-row-desc">
-                        Sesiones de Armonización en donde trabajamos desde y hacia el amor y el potencial infinito
-                        dentro de
-                        cada uno de nosotros.
+                        Sesiones de armonización energética orientadas a fortalecer el equilibrio, la coherencia y el
+                        potencial personal.
 
-                        La sesión se basa en una tecnica que esta especialmente canalizada para armonizar y equilibrar
-                        tu
-                        Entramado de Calibración Universal, que es el campo energético - electromagnético humano
-                        (Electro-Magnetic-Field Balance), compuesto por un entramado de fibras de luz y energía que
-                        rodean
-                        completamente al cuerpo a una distancia de 60 cm (conformando lo que conocemos como el aura
-                        energético).
+                        La EMF Balancing Technique® trabaja sobre el Entramado de Calibración Universal, un campo de
+                        energía y luz que forma parte de nuestro sistema energético. A través de una serie progresiva de
+                        fases, la técnica favorece una mayor integración energética, ayudando a armonizar nuestra
+                        relación con la historia personal, el presente y los potenciales futuros.
                     </p>
                     <p class="serv-row-desc">
-                        Cada sesión tiene como resultado el fortalecimiento del Entramado de luz, permitiendo al
-                        consultante
-                        sostener una carga eléctrica mayor de la que antes podía sostener. Permite ordenarnos, integrar
-                        e
-                        irradiar mayor energía desde nuestro Canal Central, equilibrando y armonizando las fibras de luz
-                        de nuestra historia, nuestro presente y nuestros logros y potenciales, para co-crear una vida
-                        más
-                        iluminada!
-
-                        Si las primeras cuatro fases de la EMF Balancing Technique® trabajan la "Evolución de la
-                        conciencia"
-                        y crean un fundamento energético para apoyar tu habilidad de "co-crear la vida más iluminada que
-                        puedas"; el enfoque de las Fases V-VIII es el de "Practicar Maestría en la vida diaria".
+                        Cada sesión contribuye a fortalecer el entramado energético, promoviendo una mayor capacidad
+                        para sostener nuestra energía, desarrollar claridad interior y vivir con mayor equilibrio y
+                        consciencia.
+                    <p class="serv-row-desc">
+                        Las primeras cuatro fases están enfocadas en la evolución de la consciencia y la creación de una
+                        base energética sólida para la transformación personal. Las fases V a VIII profundizan este
+                        recorrido, acompañando la integración de esos aprendizajes en la vida cotidiana y el desarrollo
+                        de una mayor maestría personal.
+                    </p>
+                    <p class="serv-row-desc">
+                        Una experiencia profunda y transformadora para quienes desean reconectarse con su esencia,
+                        fortalecer su energía y co-crear una vida más alineada con su propósito.
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag">Presencial · Online</span>
@@ -1268,47 +1433,21 @@
                     <div class="serv-number">02</div>
                     <h2 class="serv-row-title">Astrología<br><em>Espiritual</em></h2>
                     <p class="serv-row-desc">
-                        Sesiones en donde podremos entender junt@s que el zodiaco y el sistema planetario no están
-                        afuera,
-                        sino que son espejos de como nosotros estamos organizados espiritual, emocional, mental y
-                        físicamente. 
-                        Abordaremos entonces, a traves del conocimiento de tu propia carta natal, una sesion de
-                        autoconocimiento
-                        que te permitirá conocerte mas a vos mismo y tambien saber de donde venis y hacia donde podes
-                        llegar,
-                        utilizando todas las herramientas que tenes a disposición, como potencial. En esta sesion
-                        aprenderemos
-                        que si bien estamos acostumbrados a observar el mundo hacia afuera, podemos ahora empezar
-                        a observar el
-                        mundo hacia adentro, empoderarnos y poder conectarnos con nuestro ser. En este sentido
-                        comprenderemos que
-                        los planetas no determinan nuestra vida, sino que éstos describen capacidades, potenciales,
-                        ciclos,
-                        tiempos para que de alguna manera podamos organizarnos mejor en nuestra vida cotidiana.
+                        Sesiones de autoconocimiento basadas en la lectura e interpretación de tu Carta Natal en donde
+                        comprender el mapa simbólico con el que llegamos a esta vida: nuestros talentos, desafíos,
+                        aprendizajes, potenciales y ciclos evolutivos.
                     </p>
                     <p class="serv-row-desc">
-                        La sesion tambien te enseñara que tu Carta Natal representa el momento en que el ser nace y se
-                        sellan
-                        las tendencias y los potenciales que trae. Que el individuo no nace en cualquier
-                        momento, sino cuando el
-                        sistema planetario, fiel reflejo de las representaciones de nuestro espíritu, le otorgan al
-                        individuo
-                        esas tendencias  para hacer una experiencia de vida unica, particula y especial. Por
-                        ultimo alcanzaremos
-                        a comprender que nuestra Carta nos muestra el pasado y no el futuro; ya que la posición de los
-                        planetas en la carta describen hasta donde ese individuo pudo integrar en su consciencia y en su
-                        alma
-                        los potenciales que la vida le ha dado. Pondremos especial atencion en los potenciales que el
-                        individuo
-                        todavía no ha podido integrar en sus aprendizajes; pero que ahora, gracias a la toma de
-                        conciencia, tendra 
-                        la oportunidad de ordenar e integrar en su vida cotidiana, y asi acceder a una comprensión mayor
-                        de 
-                        su relación con el cosmos.
+                        Más que predecir acontecimientos, reconocer recursos internos, comprender patrones personales y
+                        desarrollar una relación más consciente con uno mismo y con el propósito de vida.
+                    </p>
+                    <p class="serv-row-desc">
+                        Invitación a descubrir quién eres, de dónde vienes y cuáles son las posibilidades que buscan
+                        expresarse a través de ti.
                     </p>
                     <div class="serv-row-tags">
-                        <span class="serv-tag">Lectura personalizada</span>
-                        <span class="serv-tag">Online</span>
+                        <span class="serv-tag">Presencial · Online</span>
+                        <span class="serv-tag">Incluye: Lectura personalizada de Carta Natal</span>
                     </div>
                     <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
                 </div>
@@ -1316,7 +1455,8 @@
             <!-- 03 — TAMEANA -->
             <div class="serv-row reveal" id="tameana">
                 <div class="serv-row-img-wrapper">
-                    <img class="serv-main-img" src="Source/servicios/Tameana.jpeg" alt="Cristales Tameana" />
+                    <img class="serv-main-img" src="Source/servicios/Tameana.png" alt="Cristales Tameana"
+                        style="width: 500px; height: 500px" />
                     <div class="serv-badge">
                         <img src="Source/Logos/Cristales Tameana.jpeg" alt="Logo Cristales Tameana" />
                     </div>
@@ -1325,29 +1465,28 @@
                     <div class="serv-number">03</div>
                     <h2 class="serv-row-title">Tameana &<br><em>Cristales</em></h2>
                     <p class="serv-row-desc">
-                        Sesiones vibracionales y conscientes, en donde se utilizan cristales de cuarzo por su enorme
-                        capacidad para emitir frecuencias y símbolos, acorde a escalas vibratorias, en donde el ser
-                        humano es un vehículo de transmisión, de conciencia y de geometría sagrada. Es un trabajo
-                        profundo y movilizante a nivel físico, emocional y de amplia apertura en el plano espiritual.
+                        Sesiones vibracionales que combinan cristales de cuarzo, geometría sagrada y frecuencias
+                        específicas para favorecer procesos de armonización, expansión de consciencia y bienestar
+                        integral.
+
                     </p>
                     <p class="serv-row-desc">
-                        En el Nivel 1 "Salush Nahi" ó "Triángulo Sagrado" se genera junto al "triángulo" una gran
-                        condensación de energía que logra romper estructuras, temores y cualquier tipo de limitación. Es
-                        una experiencia vibracional profunda donde se usan las propiedades amplificadoras de los
-                        cristales de Cuarzos, dispuestos geométricamente alrededor de una persona. También se usan
-                        sonidos, Símbolos Maestros y Geometría Sagrada. Es un trabajo profundo que equilibra el cuerpo
-                        físico, movilizando los aspectos emocionales y dando una amplia apertura en el plano espiritual.
+                        Tameana acompaña la liberación de bloqueos energéticos, el equilibrio emocional y la reconexión
+                        con aspectos esenciales del ser.
                     </p>
                     <p class="serv-row-desc">
-                        En el Nivel 2 "Ma'hat" ó "Las Puertas del Alma" se trabaja con un hexágono, y el eje de todo el
-                        trabajo vibracional se centra en el corazón como puerta de consciencia y comprensión. Ma ´at es
-                        una estructura sagrada que simboliza la contención. Es una puerta que abre nuestra Consciencia
-                        al flujo natural del Universo y nos alinea con los procesos de cambio de nuestro planeta
-                        generando sincronización con la transformación que esta ocurriendo.
+                        Nivel I – Salush Nahi (Triángulo Sagrado)
+                        Favorece la liberación de estructuras limitantes, promoviendo equilibrio, claridad y apertura
+                        energética.
+                    </p>
+                    <p class="serv-row-desc">
+                        Nivel II – Ma'hat (Puertas del Alma)
+                        Profundiza el trabajo del corazón como centro de consciencia, facilitando procesos de
+                        integración, transformación y alineación interior.
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag">Sesión individual</span>
-                        <span class="serv-tag dark">Activación</span>
+                        <span class="serv-tag dark">Activación Energética</span>
                     </div>
                     <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
                 </div>
@@ -1365,30 +1504,27 @@
                     <div class="serv-number">04</div>
                     <h2 class="serv-row-title">Sakh Majat<br><em>I & II</em></h2>
                     <p class="serv-row-desc">
-                        Sesiones de conexión en donde se trabaja con cristales de cuarzo, geometría sagrada y códigos
-                        vibratorios específicos que, trabajando en conjunto, te asistirán a alinearte con tu canal y con
-                        frecuencias elevadas.
+                        Sesiones de conexión y alineación energética que combinan cristales de cuarzo, geometría sagrada
+                        y códigos vibratorios específicos para favorecer la expansión de consciencia y la reconexión con
+                        el potencial interior.
                     </p>
                     <p class="serv-row-desc">
-
-                        En el caso de "Sakh Majat I, la pirámide de Sirio" hablamos de una técnica simple que utiliza
-                        cuatro cristales de cuarzo que hacen las veces de canalizadores de energía. A través de ellos se
-                        genera una estructura/geometría vibracional, que permite que la persona reciba, no sólo la
-                        frecuencia que estamos generando en ese preciso instante sino que también se recibe la
-                        asistencia de guías de alta vibración. Está dirigida a aquellas personas que buscan una real
-                        transformación en sus vidas, despertando sus fuerzas de autosanación y su potencial como seres
-                        cósmicos.
+                        Sakh Majat propone un trabajo profundo de armonización a través de estructuras energéticas
+                        diseñadas para facilitar procesos de transformación, claridad y evolución personal.
                     </p>
                     <p class="serv-row-desc">
-                        En el caso de "Sakh’ Majat 2, la estrella de Sirio" hablamos de una técnica que utiliza 8
-                        cristales de cuarzo y una piedra amatista, que pone especial atención en el despertar de nuestro
-                        ser estelar, a través de la integración de la energía femenina (Isis) con la masculina (Osiris),
-                        para dar paso a la integración de ambas (Horus), un ser solar que nos empodera y reconecta con
-                        el ser divino y radiante que somos.
+                        Nivel I – La Pirámide de Sirio
+                        Favorece la conexión con frecuencias elevadas, el despertar del potencial de autosanación y una
+                        mayor alineación con el propio camino.
+                    </p>
+                    <p class="serv-row-desc">
+                        Nivel II – La Estrella de Sirio
+                        Profundiza el proceso promoviendo la integración de las energías femenina y masculina,
+                        favoreciendo la conexión con una versión más consciente, equilibrada y luminosa del ser.
                     </p>
                     <div class="serv-row-tags">
-                        <span class="serv-tag">Iniciaciones</span>
                         <span class="serv-tag">Presencial</span>
+                        <span class="serv-tag">Iniciación y Activación Energética</span>
                     </div>
                     <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Reservar sesión →</a>
                 </div>
@@ -1397,29 +1533,26 @@
 
             <!-- 05 — MEDITACIONES GUIADAS -->
             <div class="serv-row reveal" id="meditaciones">
-                <div class="serv-row-img">
+                <div class="serv-row-img" id="meditaciones-img">
                     <img src="Source/Logos/Meditaciones.jpeg" alt="Meditaciones Guiadas" />
                 </div>
                 <div class="serv-row-content">
                     <div class="serv-number">05</div>
                     <h2 class="serv-row-title">Meditaciones<br><em>Guiadas</em></h2>
                     <p class="serv-row-desc">
-                        Bienvenid@s! Mi nombre es Naty Amor, soy Terapeuta Energetica y en este canal vas a
-                        encontrar meditaciones guiadas y videos que van de la mano de las herramienta de sanación
-                        que facilito.
+                        Una colección de meditaciones, visualizaciones y recursos audiovisuales orientados al bienestar,
+                        la transformación personal y el desarrollo de la consciencia.
                     </p>
                     <p class="serv-row-desc">
-                        Por un lado: videos introductorios sobre mis terapias; luego meditaciones propias del metodo
-                        "Emf Balancing Technique"; meditaciones guiadas con influencias del Mindfullnes, y meditaciones
-                        sistemicas básicas para Sanar tu Niño interior, Sanar con Mamá y Papá y otras meditaciones
-                        inspiradas en trabajos de Constelaciones Familiares.
+                        Prácticas inspiradas en distintas herramientas de crecimiento personal y armonización
+                        energética, incluyendo meditaciones para fortalecer la conexión interior, trabajar la gestión
+                        emocional, desarrollar una mayor presencia consciente y acompañar procesos de sanación y
+                        autoconocimiento.
                     </p>
                     <p class="serv-row-desc">
-                        Esperando que la propuesta de transitar este camino junt@s te haya resonado, te invito a que
-                        te
-                        animes a experimentar, expandir y vibrar tambien junt@s!. Abrazo en la energía de la luz y el
-                        amor!
-                        Y aqui estamos!
+                        Contenidos complementarios sobre energía, mindfulness, programación neurolingüística, vínculos
+                        familiares y ejercicios de integración para aplicar en la vida cotidiana. Espacio para
+                        detenerse, respirar y reconectar contigo mism@.
                     </p>
                     <div class="serv-row-tags">
                         <span class="serv-tag dark">Gratuito en YouTube</span>
@@ -1461,32 +1594,34 @@
                     <h2 class="serv-row-title">Curso Taller<br><em>Técnica de Equilibrio</em></h2>
 
                     <p class="serv-row-desc">
-                        ¡Bienvenid@ a esta experiencia de autoconocimiento, recalibración, equilibrio energético,
-                        reconexión y transformación! Es un verdadero honor acompañarte en este recorrido enriquecido por
-                        más de 15 años de práctica, estudio y acompañamiento de procesos de crecimiento personal.
+                        Experiencias de formación y transformación personal diseñadas para acompañarte en el
+                        aprendizaje, la integración y la aplicación práctica de herramientas de equilibrio energético,
+                        autoconocimiento y expansión de consciencia.
                     </p>
-
                     <p class="serv-row-desc">
-                        Este programa ha sido diseñado para ayudarte a fortalecer tu conexión contigo mism@, comprender
-                        tu entramado energético o "cuerpo de luz" y recorrer un camino de mayor consciencia, equilibrio
-                        y expansión para co-crear la nueva vida que deseas y mereces.
+                        Cada programa combina material audiovisual, contenidos teóricos, gráficos explicativos,
+                        ejercicios de integración, meditaciones guiadas y recursos especialmente desarrollados para
+                        facilitar una experiencia profunda, clara y transformadora.
                     </p>
-
                     <p class="serv-row-desc">
-                        A lo largo del recorrido, dividido en Módulos, encontrarás material teórico, gráficos
-                        explicativos, decretos de transformación, ejercicios de integración, meditaciones guiadas y
-                        sesiones energéticas especialmente organizadas para acompañar cada etapa del proceso.
+                        Más que una formación, se trata de un recorrido vivencial que te permitirá fortalecer tu
+                        conexión contigo mism@, comprender mejor tu energía y desarrollar recursos para crear una vida
+                        con mayor equilibrio, coherencia y bienestar.
                     </p>
-
                     <p class="serv-row-desc">
-                        Confía en tu proceso. Permítete observar, sentir, descubrir y registrar aquello que se vaya
-                        revelando a lo largo del camino. Gracias por elegirte y permitirte iniciar este viaje hacia una
-                        versión más consciente, equilibrada y alineada de ti mism@.
+                        Aprende a tu propio ritmo, desde cualquier lugar y con materiales diseñados para acompañar cada
+                        etapa del proceso.
                     </p>
+                    <p class="serv-row-desc">Próximamente:</p>
+                    <ul class="serv-list">
+                        <li>Programa Taller de Equilibrio Energético</li>
+                        <li>Taller de Tameana Nivel I</li>
+                        <li>Nuevos cursos y experiencias de expansión de consciencia</li>
+                    </ul>
 
                     <div class="serv-row-tags">
-                        <span class="serv-tag">Curso en Módulos</span>
-                        <span class="serv-tag dark">Autoconocimiento</span>
+                        <span class="serv-tag">Online</span>
+                        <span class="serv-tag dark">Programas y Talleres Grabados</span>
                     </div>
 
                     <a class="btn-outline" href="https://wa.me/5491161454942" target="_blank">Consultar por el curso

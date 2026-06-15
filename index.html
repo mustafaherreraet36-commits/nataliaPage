@@ -543,6 +543,35 @@
             margin-top: 7px;
         }
 
+        /* Estilo para la lista de servicios */
+        .sobre-list {
+            list-style: none;
+            /* Quitamos los puntos por defecto */
+            padding-left: 20px;
+            /* Esto genera la sangría */
+            margin: 10px 0 10px 0;
+        }
+
+        .sobre-list li {
+            position: relative;
+            font-size: .93rem;
+            line-height: 1.85;
+            opacity: .8;
+            margin-bottom: 4px;
+            padding-left: 15px;
+        }
+
+        /* Creamos un punto personalizado elegante */
+        .sobre-list li::before {
+            content: "•";
+            color: var(--color-action);
+            /* Usa el color de acento de tu web */
+            font-weight: bold;
+            display: inline-block;
+            width: 15px;
+            margin-left: -15px;
+        }
+
         /* ── SERVICIOS ─────────────────────────────────────── */
         .servicios {
             background: #f9f5f0;
@@ -1594,48 +1623,41 @@
             <span class="section-label">Sobre mí</span>
             <h2 class="section-title">Soy Natalia Amor<br></h2>
 
-            <p>Soy Natalia Amor, terapeuta holística, facilitadora energética y acompañante de procesos de
+            <p>
+                Soy Natalia Amor, terapeuta holística, facilitadora energética y acompañante de procesos de
                 transformación personal.
+            </p>
+            <p>
                 Desde hace años acompaño a personas que desean recuperar su equilibrio, comprender sus procesos
-                emocionales y desarrollar
-                una conexión más profunda con su propia sabiduría interior.</p>
-
-            <p>Mi trabajo integra diferentes herramientas de crecimiento y expansión de consciencia, entre ellas la EMF
-                Balancing Technique,
-                Tameana, la Astrología Evolutiva Espiritual, el Mindfulness con Programación Neurolingüística y diversas
-                técnicas de
-                armonización energética. Todas herramientas de crecimiento, expansión de consciencia y armonización
-                energética,
-                orientadas al autoconocimiento, la transformación personal y el desarrollo del potencial humano.</p>
-
-            <p>A lo largo de mi recorrido he comprobado que cada persona posee dentro de sí misma los recursos
-                necesarios
-                para transformar su realidad. Mi tarea consiste en acompañar ese proceso, facilitando espacios de
-                escucha,
-                comprensión, equilibrio y desarrollo de potenciales.
-                Mi propósito es ofrecer herramientas que permitan integrar cuerpo, mente, emociones, energía, espíritu,
-                favoreciendo una vida más consciente, auténtica y alineada con el propósito personal.</p>
-
-            <p>¡Te doy la bienvenida a este espacio de aprendizaje, transformación y crecimiento!</p>
-            <!--
-            <div class="creds">
-                <div class="cred-item">
-                    <div class="cred-dot"></div><span>Profesora en EMF Balancing Technique, Fases I–VIII</span>
-                </div>
-                <div class="cred-item">
-                    <div class="cred-dot"></div><span>Profesora en Tameana y Sakh Majat I–II</span>
-                </div>
-                <div class="cred-item">
-                    <div class="cred-dot"></div><span>Profesora en Astrología Espiritual</span>
-                </div>
-                <div class="cred-item">
-                    <div class="cred-dot"></div><span>Acompañamiento en procesos personales</span>
-                </div>
-                <div class="cred-item">
-                    <div class="cred-dot"></div><span>Sesiones 1:1 presenciales y online</span>
-                </div>
-            </div>
-            -->
+                emocionales y desarrollar una conexión más profunda con su propia sabiduría interior.
+            </p>
+            <p>
+                Mi trabajo integra distintas herramientas de armonización energética, autoconocimiento y expansión de
+                consciencia, creando espacios seguros para el crecimiento personal y espiritual.
+            </p>
+            <p>
+                Creo profundamente que cada persona posee dentro de sí los recursos necesarios para transformar su
+                realidad y vivir una vida más consciente, auténtica y alineada con su propósito.
+            </p>
+            <p><em>Formación y Especialidades</em></p>
+            <ul class="sobre-list">
+                <li>Profesional EMF Balancing Technique®</li>
+                <li>Profesional Tameana</li>
+                <li>Profesional Astrología Espiritual</li>
+                <li>Profesional Sakh Majat</li>
+                <li>Facilitadora de procesos de transformación y expansión de consciencia</li>
+            </ul>
+            <p><em>Modalidades de Atención</em></p>
+            <ul class="sobre-list">
+                <li>Presencial</li>
+                <li>Online</li>
+                <li>Sesiones Individuales</li>
+                <li>Cursos y Talleres Online</li>
+            </ul>
+            <p>
+                ✨ Te invito a iniciar un camino de equilibrio, autoconocimiento y expansión, descubriendo los recursos,
+                dones y potenciales que ya habitan en ti.
+            </p>
             <div style="margin-top:32px;">
                 <a class="btn-secondary" href="sobre.html">Conocer mi historia completa →</a>
             </div>
