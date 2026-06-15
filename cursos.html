@@ -246,6 +246,8 @@
             padding-top: 80px;
             min-height: 55vh;
             background: linear-gradient(160deg, #f0f5ed 0%, #c8dfc0 100%);
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/Fondos/Fondo-CursosOnline.jpeg');
             display: flex;
             align-items: center;
             justify-content: center;
@@ -285,11 +287,13 @@
         }
 
         .page-hero-eyebrow {
-            font-size: .72rem;
+            font-size: .8rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            opacity: .5;
+            opacity: .9;
             margin-bottom: 20px;
+            font-weight: 500;
+
         }
 
         .page-hero-title {
@@ -303,12 +307,15 @@
         .page-hero-title em {
             font-style: italic;
             color: var(--color-action);
+            font-weight: 600;
+            text-shadow: -0.5px 0.5px 0 #000, 1px 0.5px 0 #000, -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000;
+
         }
 
         .page-hero-sub {
             font-family: var(--font-display);
             font-size: 1.2rem;
-            font-weight: 300;
+            font-weight: 600;
             font-style: italic;
             opacity: .65;
             max-width: 540px;
@@ -591,6 +598,43 @@
             margin-top: 52px;
         }
 
+
+        .info-grid #Cualquier-Lugar {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/CursosOnline/DesdeCualquierLugar.jpeg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 400px;
+
+        }
+
+        .info-grid #Acompañamiento-real {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/CursosOnline/AcompañamientoReal.jpeg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 400px;
+
+        }
+
+        .info-grid #Certificacion-oficial {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/CursosOnline/CertificadoOficial.jpeg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 400px;
+
+        }
+
         .info-card {
             background: var(--color-base);
             border: 1px solid var(--color-border);
@@ -613,14 +657,15 @@
         .info-card-title {
             font-family: var(--font-display);
             font-size: 1.3rem;
-            font-weight: 500;
+            font-weight: 900;
             margin-bottom: 10px;
         }
 
         .info-card-desc {
             font-size: .84rem;
             line-height: 1.7;
-            opacity: .65;
+            opacity: .9;
+
         }
 
         /* ── CTA SECTION ──────────────────────────────────── */
@@ -1192,21 +1237,21 @@
             </div>
 
             <div class="info-grid">
-                <div class="info-card reveal">
+                <div class="info-card reveal" id="Cualquier-Lugar">
                     <div class="info-card-icon">🌍</div>
                     <h3 class="info-card-title">Desde cualquier lugar</h3>
                     <p class="info-card-desc">Accedé a las formaciones desde la comodidad de tu hogar, sin importar
                         dónde estés en el mundo.</p>
                 </div>
 
-                <div class="info-card reveal">
+                <div class="info-card reveal" id="Acompañamiento-real">
                     <div class="info-card-icon">🤝</div>
                     <h3 class="info-card-title">Acompañamiento real</h3>
                     <p class="info-card-desc">Cada curso incluye acompañamiento personalizado para que nunca te sientas
                         sola en el proceso.</p>
                 </div>
 
-                <div class="info-card reveal">
+                <div class="info-card reveal" id="Certificacion-oficial">
                     <div class="info-card-icon">📜</div>
                     <h3 class="info-card-title">Certificación oficial</h3>
                     <p class="info-card-desc">Al completar cada formación recibís un certificado que avala tu

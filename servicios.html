@@ -257,6 +257,9 @@
             padding-top: 80px;
             min-height: 55vh;
             background: linear-gradient(160deg, #f9f5f0 0%, #eedad2 100%);
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/Fondos/Fondo-MisServicios.jpeg');
+            ;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -284,11 +287,12 @@
         }
 
         .page-hero-eyebrow {
-            font-size: .72rem;
+            font-size: .8rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            opacity: .5;
+            opacity: .9;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .page-hero-title {
@@ -302,12 +306,14 @@
         .page-hero-title em {
             font-style: italic;
             color: var(--color-action);
+            font-weight: 400;
+            text-shadow: -0.5px 0.5px 0 #000, 1px 0.5px 0 #000, -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000;
         }
 
         .page-hero-sub {
             font-family: var(--font-display);
             font-size: 1.2rem;
-            font-weight: 300;
+            font-weight: 600;
             font-style: italic;
             opacity: .65;
             max-width: 540px;
@@ -376,18 +382,36 @@
             align-items: center;
             gap: 12px;
             cursor: default;
+            width: 130px;
+            margin-top: 20px;
         }
 
-        .icon-pill img {
+        .icon-pill div {
+            position: relative;
+            border-radius: 50%;
+            /* O 8px si es cuadrado */
+            overflow: hidden;
+            /* ESTO ES LO QUE CORTA EL ZOOM */
+
+            /* IMPORTANTE: Fuerza al navegador a reconocer este elemento como un límite de recorte */
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        .icon-pill div img {
             width: 90px;
             height: 90px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid rgba(255, 255, 255, .12);
             transition: transform .3s, border-color .3s;
+            object-fit: cover;
+
+            /* El zoom constante */
+            transform: scale(1.1);
         }
 
-        .icon-pill:hover img {
+        .icon-pill:hover div img {
             transform: scale(1.08);
             border-color: var(--color-action);
         }
@@ -1214,6 +1238,10 @@
                 gap: 28px;
             }
 
+            .icon-pill {
+                width: 100px;
+            }
+
             .icon-pill img {
                 width: 70px;
                 height: 70px;
@@ -1335,7 +1363,9 @@
     <div class="icons-strip">
         <div class="icons-strip-inner">
             <a href="#balancing" class="icon-pill">
-                <img src="Source/Logos/EMF Balancing.jpeg" alt="EMF Balancing" />
+                <div>
+                    <img src="Source/Logos/EMF Balancing.jpeg" alt="EMF Balancing" />
+                </div>
                 <span class="icon-pill-label">EMF Balancing</span>
             </a>
             <!--<a href="#sakh-majat" class="icon-pill">
@@ -1344,33 +1374,47 @@
             </a>
             -->
             <a href="#astrologia" class="icon-pill">
-                <img src="Source/Logos/Astrologia Espiritual.jpeg" alt="Astrología Espiritual" />
+                <div>
+                    <img src="Source/Logos/Astrologia Espiritual.jpeg" alt="Astrología Espiritual" />
+                </div>
                 <span class="icon-pill-label">Astrología</span>
             </a>
             <a href="#tameana" class="icon-pill">
-                <img src="Source/Logos/Cristales Tameana.jpeg" alt="Cristales Tameana" />
+                <div>
+                    <img src="Source/Logos/Cristales Tameana.jpeg" alt="Cristales Tameana" />
+                </div>
                 <span class="icon-pill-label">Tameana</span>
             </a>
             <a href="#sakh-majat" class="icon-pill">
-                <img src="Source/Logos/Cristales Sakh Majat.jpeg" alt="Cristales Sakh Majat" />
+                <div>
+                    <img src="Source/Logos/Cristales Sakh Majat.jpeg" alt="Cristales Sakh Majat" />
+                </div>
                 <span class="icon-pill-label">Sakh Majat</span>
             </a>
             <a href="#meditaciones" class="icon-pill">
-                <img src="Source/Logos/Meditaciones.jpeg" alt="Meditaciones" />
+                <div>
+                    <img src="Source/Logos/Meditaciones.jpeg" alt="Meditaciones" />
+                </div>
                 <span class="icon-pill-label">Meditaciones</span>
-            </a>
-            <a href="#talleres" class="icon-pill">
-                <img src="Source/Logos/Talleres Grupales.jpeg" alt="Talleres" />
-                <span class="icon-pill-label">Talleres</span>
             </a>
         </div>
         <div class="icons-strip-inner">
+            <a href="#talleres" class="icon-pill">
+                <div>
+                    <img src="Source/Logos/Talleres Grupales.jpeg" alt="Talleres" />
+                </div>
+                <span class="icon-pill-label">Cursos - Talleres</span>
+            </a>
             <a href="contacto.html#redes" class="icon-pill">
-                <img src="Source/Logos/Vivos - Redes.jpeg" alt="Vivos · Redes" />
+                <div>
+                    <img src="Source/Logos/Vivos - Redes.jpeg" alt="Vivos · Redes" />
+                </div>
                 <span class="icon-pill-label">Vivos · Redes</span>
             </a>
             <a href="sobre.html#espacio" class="icon-pill">
-                <img src="Source/Logos/Espacios.jpeg" alt="Espacios" />
+                <div>
+                    <img src="Source/Logos/Espacios.jpeg" alt="Espacios" />
+                </div>
                 <span class="icon-pill-label">Espacio</span>
             </a>
         </div>
@@ -1582,7 +1626,7 @@
                         </div>
 
                         <div class="yt-video-container">
-                            <iframe src="https://www.youtube.com/embed/Sj8LgTnvX30?rel=0" title="YouTube video player"
+                            <iframe src="https://www.youtube.com/watch?v=RFDJXgr_cX4" title="YouTube video player"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
@@ -1682,7 +1726,7 @@
                 psicológicos, ni reemplazan la consulta con profesionales de la salud matriculados. Si tenés alguna
                 condición médica o psicológica preexistente, te recomendamos consultar con tu médico de cabecera.
                 Natalia Amor no diagnostica ni receta medicamentos.</p>
-            <p class="copyright">© 2025 Natalia Amor · Todos los derechos reservados · Sitio Web diseñado con fines
+            <p class="copyright">© 2026 Natalia Amor · Todos los derechos reservados · Sitio Web diseñado con fines
                 profesionales e informativos.</p>
         </div>
     </div>

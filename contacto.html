@@ -246,6 +246,8 @@
             padding-top: 80px;
             min-height: 55vh;
             background: linear-gradient(160deg, #f9f5f0 0%, var(--color-warm) 100%);
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/Fondos/Fondo-Contactos.jpeg');
             display: flex;
             align-items: center;
             justify-content: center;
@@ -285,11 +287,12 @@
         }
 
         .page-hero-eyebrow {
-            font-size: .72rem;
+            font-size: .8rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            opacity: .5;
+            opacity: .9;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .page-hero-title {
@@ -303,12 +306,15 @@
         .page-hero-title em {
             font-style: italic;
             color: var(--color-action);
+            font-weight: 600;
+            text-shadow: -0.5px 0.5px 0 #000, 1px 0.5px 0 #000, -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000;
+
         }
 
         .page-hero-sub {
             font-family: var(--font-display);
             font-size: 1.2rem;
-            font-weight: 300;
+            font-weight: 600;
             font-style: italic;
             opacity: .65;
             max-width: 540px;
@@ -379,13 +385,22 @@
         }
 
         .telefono-card {
-            background: var(--color-warm);
+            /* background: var(--color-warm); */
             border-radius: 8px;
             padding: 48px 40px;
             text-align: center;
             box-shadow: 0 20px 60px rgba(42, 43, 42, .1);
             position: relative;
             overflow: hidden;
+
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('Source/servicios/EscribimePorWhatsapp.jpeg');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: 400px;
         }
 
         .telefono-card::before {
@@ -613,14 +628,21 @@
         .membresia-card {
             width: 100%;
             max-width: 380px;
-            background: linear-gradient(145deg, var(--color-text), #3a3b3a);
+            /* background: linear-gradient(145deg, var(--color-text), #3a3b3a); */
             border-radius: 12px;
-            padding: 52px 40px;
+            padding: 100px 40px;
             text-align: center;
             color: var(--color-base);
             box-shadow: 0 24px 64px rgba(42, 43, 42, .2);
             position: relative;
             overflow: hidden;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url('Source/servicios/Contacto\ -\ Membresia.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 400px;
         }
 
         .membresia-card::before {
@@ -632,6 +654,13 @@
             border: 1px solid rgba(255, 255, 255, .06);
             top: -50px;
             right: -50px;
+        }
+
+        .membresia-card-content {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
         .membresia-card-icon {
@@ -1182,11 +1211,14 @@
                 </div>
                 <div class="membresia-visual reveal">
                     <div class="membresia-card">
-                        <div class="membresia-card-icon">✨</div>
-                        <div class="membresia-card-title">Membresía<br><em>Alma</em></div>
-                        <p class="membresia-card-desc">Un espacio de contención, crecimiento y amor para las almas que
-                            eligen expandirse.</p>
-                        <a class="btn-warm" href="https://wa.me/5491161454942" target="_blank">Quiero ser parte</a>
+                        <div class="membresia-card-content">
+                            <!--<div class="membresia-card-icon">✨</div>-->
+                            <div class="membresia-card-title">Membresía<br><em>Alma</em></div>
+                            <p class="membresia-card-desc">Un espacio de contención, crecimiento y amor para las almas
+                                que
+                                eligen expandirse.</p>
+                            <a class="btn-warm" href="https://wa.me/5491161454942" target="_blank">Quiero ser parte</a>
+                        </div>
                     </div>
                 </div>
             </div>
