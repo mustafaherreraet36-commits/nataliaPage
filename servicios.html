@@ -92,19 +92,15 @@
             font-weight: 500;
             letter-spacing: .04em;
             text-decoration: none;
-            /* Elimina subrayado */
             color: var(--color-text);
         }
 
         .logo-img {
             width: 75px;
-            /* Tamaño de la imagen */
             height: 55px;
             border-radius: 20%;
-            /* Para que sea circular */
             object-fit: cover;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            /* Borde muy sutil */
         }
 
         .nav-logo span {
@@ -259,7 +255,9 @@
             background: linear-gradient(160deg, #f9f5f0 0%, #eedad2 100%);
             background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
                 url('Source/Fondos/Fondo-MisServicios.jpeg');
-            ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -486,25 +484,14 @@
         .serv-badge {
             position: absolute;
             top: -20px;
-            /* Sube el logo un poco por fuera del borde superior */
             right: -20px;
-            /* Lo mueve hacia la derecha. Cambia a 'left: -20px' si lo prefieres del otro lado */
             width: 110px;
-            /* Tamaño del logo */
             height: 110px;
-
-            /* Hacemos que el contenedor del logo sea un círculo perfecto */
             border-radius: 50%;
             overflow: hidden;
             background-color: #ede7e1;
-            /* Fondo beige por si la imagen tarda en cargar */
-
-            /* Sombra sutil para despegar el logo de la foto principal */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            z-index: 2;
-            /* Asegura que el logo quede por encima de la foto */
-
-            /* Añadimos una transición por si quieres que el logo también reaccione al hover */
+            z-index: 10;
+            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.35));
         }
 
         /* Ajustes de la imagen interna del logo para que no se corte el texto */
@@ -726,102 +713,247 @@
         }
 
 
-        /* 6. Aseguramos legibilidad para el widget de YouTube */
-        .youtube-widget {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        /* YouTube Channel Widget */
+        .youtube-channel-preview {
+            display: block;
+            background: var(--color-base);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(42, 43, 42, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
         }
 
-
-
-        /* ── WIDGET DE YOUTUBE ───────────────────────── */
-        .youtube-widget {
-            background-color: #f0e6e0;
-            /* Un blanco muy sutilmente cálido */
-            border: 1px solid #ede7e1;
-            border-radius: 12px;
-            padding: 16px;
-            margin-top: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            /* Sombra suave para que resalte */
+        .youtube-channel-preview:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(42, 43, 42, 0.06);
         }
 
-        .yt-header {
+        .yt-preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+
+        .yt-profile-group {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
         }
 
-        .yt-avatar {
-            width: 46px;
-            height: 46px;
+        .yt-profile-img {
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             object-fit: cover;
+            border: 1.5px solid var(--color-warm);
         }
 
-        .yt-info {
+        .yt-profile-info {
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
-            /* Empuja el botón hacia la derecha */
+            text-align: left;
         }
 
-        .yt-name {
+        .yt-channel-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
             font-weight: 600;
-            font-size: 0.95rem;
             color: var(--color-text);
-            /* Usa el color principal de tu texto */
             line-height: 1.2;
         }
 
-        .yt-handle {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 2px;
+        .yt-channel-handle {
+            font-size: 0.72rem;
+            color: var(--color-text);
+            opacity: 0.6;
         }
 
-        .yt-subscribe {
-            background-color: #bc9680;
-            /* El color de tu paleta */
-            color: #fff;
+        .yt-subscribe-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #FF0000;
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
             padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background 0.2s ease, transform 0.15s ease;
         }
 
-        .yt-subscribe:hover {
-            background-color: #a37d68;
-            /* Un tono un poco más oscuro para el hover */
-            transform: translateY(-2px);
+        .yt-subscribe-btn:hover {
+            background: #E60000;
+            transform: scale(1.03);
+            color: #ffffff;
         }
 
-        /* Contenedor responsivo para el iframe (mantiene proporción 16:9) */
+        .yt-channel-intro {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            opacity: 0.75;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .yt-video-mockup {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 4px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2A2B2A 0%, #1e1f1e 100%);
+            margin-bottom: 18px;
+            cursor: pointer;
+        }
+
+        .yt-video-mockup::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('Source/servicios/Astrologia.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.45;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .yt-video-mockup:hover::before {
+            transform: scale(1.05);
+            opacity: 0.55;
+        }
+
+        .yt-video-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            z-index: 2;
+        }
+
+        .yt-video-tag {
+            align-self: flex-start;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: rgba(255, 0, 0, 0.85);
+            padding: 4px 8px;
+            border-radius: 2px;
+        }
+
+        .yt-play-button-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .yt-play-button {
+            width: 54px;
+            height: 54px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+        }
+
+        .yt-video-mockup:hover .yt-play-button {
+            transform: scale(1.15);
+            background: #FF0000;
+        }
+
+        .yt-play-button svg {
+            width: 20px;
+            height: 20px;
+            fill: #FF0000;
+            margin-left: 3px;
+            transition: fill 0.3s ease;
+        }
+
+        .yt-video-mockup:hover .yt-play-button svg {
+            fill: #ffffff;
+        }
+
+        .yt-video-title {
+            align-self: flex-start;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            font-weight: 500;
+            line-height: 1.3;
+            text-align: left;
+        }
+
+        .yt-channel-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: rgba(42, 43, 42, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .youtube-channel-preview:hover .yt-channel-link-btn {
+            background: var(--color-text);
+            color: var(--color-base);
+            border-color: var(--color-text);
+        }
+
+        .yt-btn-icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
         .yt-video-container {
             position: relative;
-            padding-bottom: 56.25%;
-            /* Proporción estándar de YouTube */
-            height: 0;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            /* Mantiene la proporción de pantalla estándar */
+            border-radius: 4px;
             overflow: hidden;
-            border-radius: 8px;
-            background-color: #000;
-            /* Fondo negro mientras carga el video */
+            /* Corta los bordes del iframe para que respeten el border-radius */
+            margin-bottom: 18px;
+            background: #000000;
+            /* Fondo negro estético mientras carga el reproductor */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        /* Ajuste total del iframe dentro de su contenedor */
         .yt-video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 8px;
+            border: none;
         }
 
 
@@ -902,6 +1034,7 @@
             /* IMPORTANTE: Fuerza al navegador a reconocer este elemento como un límite de recorte */
             -webkit-mask-image: -webkit-radial-gradient(white, black);
             mask-image: radial-gradient(white, black);
+
         }
 
         /* Esta es la imagen que tiene el zoom */
@@ -1613,25 +1746,35 @@
                     </div>
                     <!-- <a class="btn-outline" href="https://www.youtube.com/@Natyamorterapias" target="_blank">Ver canal en
                         YouTube →</a> -->
-                    <div class="youtube-widget">
-                        <div class="yt-header">
-                            <img src="Source/Youtube Profile Pic.jpg" alt="Naty Amor" class="yt-avatar">
-                            <div class="yt-info">
-                                <span class="yt-name">Naty Amor Terapias</span>
-                                <span class="yt-handle">@Natyamorterapias</span>
+                    <div class="youtube-channel-preview">
+                        <div class="yt-preview-header">
+                            <div class="yt-profile-group">
+                                <img src="Source/Youtube Profile Pic.jpg" alt="Naty Amor" class="yt-profile-img">
+                                <div class="yt-profile-info">
+                                    <h4 class="yt-channel-name">Naty Amor Terapias</h4>
+                                    <span class="yt-channel-handle">@Natyamorterapias</span>
+                                </div>
                             </div>
-                            <a href="https://www.youtube.com/@Natyamorterapias" target="_blank" class="yt-subscribe">
-                                Visitar Canal
-                            </a>
+                            <a href="https://www.youtube.com/@Natyamorterapias?sub_confirmation=1" target="_blank"
+                                class="yt-subscribe-btn">Suscribirse</a>
                         </div>
-
+                        <p class="yt-channel-intro">
+                            Accedé a meditaciones guiadas del método EMF Balancing Technique®, activaciones de origen
+                            estelar y prácticas gratuitas de Mindfulness y PNL.
+                        </p>
                         <div class="yt-video-container">
-                            <iframe src="https://www.youtube.com/watch?v=RFDJXgr_cX4" title="YouTube video player"
+                            <iframe src="https://www.youtube.com/embed/Sj8LgTnvX30" title="YouTube video player"
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
+                        <a class="yt-channel-link-btn" href="https://www.youtube.com/@Natyamorterapias" target="_blank">
+                            <img src="Source/Redes/youtube.png" alt="YouTube" class="yt-btn-icon">
+                            <span>Ver canal de YouTube</span>
+                        </a>
                     </div>
+
 
 
                 </div>
@@ -1754,9 +1897,19 @@
         dropdownTriggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth <= 860) {
-                    e.preventDefault();
                     const parent = trigger.parentElement;
-                    parent.classList.toggle('active-mobile-dropdown');
+                    const isAlreadyOpen = parent.classList.contains('active-mobile-dropdown');
+
+                    if (isAlreadyOpen) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-links > li.has-dropdown').forEach(li => {
+                        li.classList.remove('active-mobile-dropdown');
+                    });
+
+                    parent.classList.add('active-mobile-dropdown');
                 }
             });
         });
@@ -1772,6 +1925,22 @@
             });
         }, { threshold: 0.1 });
         reveals.forEach(el => obs.observe(el));
+
+        // Reproduccion de videos de YouTube en el mismo sitio
+        document.querySelectorAll('.yt-video-mockup').forEach(mockup => {
+            mockup.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video-id');
+                if (videoId) {
+                    this.innerHTML = `
+                        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                            title="YouTube video player" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen></iframe>
+                    `;
+                }
+            });
+        });
     </script>
 </body>
 

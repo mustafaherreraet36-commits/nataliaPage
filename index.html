@@ -90,13 +90,10 @@
 
         .logo-img {
             width: 75px;
-            /* Tamaño de la imagen */
             height: 55px;
             border-radius: 20%;
-            /* Para que sea circular */
             object-fit: cover;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            /* Borde muy sutil */
         }
 
         .nav-logo span {
@@ -147,7 +144,6 @@
             opacity: 1;
         }
 
-        /* Dropdown menu container */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -165,12 +161,11 @@
             z-index: 1000;
             transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         }
-
-        /* Dropdown items */
+ 
         .dropdown li {
             padding: 0;
         }
-
+ 
         .dropdown a {
             display: block;
             padding: 8px 20px;
@@ -181,25 +176,23 @@
             white-space: nowrap;
             transition: background 0.2s, color 0.2s, opacity 0.2s;
         }
-
+ 
         .dropdown a::after {
             content: none !important;
         }
-
+ 
         .dropdown a:hover {
             opacity: 1;
             background: #faf7f4;
             color: var(--color-action);
         }
-
-        /* Hover effect on dropdown trigger */
+ 
         .nav-links li:hover .dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
         }
-
-        /* Hamburger menu button */
+ 
         .nav-toggle {
             display: none;
             flex-direction: column;
@@ -543,12 +536,9 @@
             margin-top: 7px;
         }
 
-        /* Estilo para la lista de servicios */
         .sobre-list {
             list-style: none;
-            /* Quitamos los puntos por defecto */
             padding-left: 20px;
-            /* Esto genera la sangría */
             margin: 10px 0 10px 0;
         }
 
@@ -561,11 +551,9 @@
             padding-left: 15px;
         }
 
-        /* Creamos un punto personalizado elegante */
         .sobre-list li::before {
             content: "•";
             color: var(--color-action);
-            /* Usa el color de acento de tu web */
             font-weight: bold;
             display: inline-block;
             width: 15px;
@@ -605,7 +593,7 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
         }
 
@@ -697,6 +685,19 @@
         #EMF_Bal .serv-tag,
         #Tameana .serv-tag,
         #Sakh_Majat .serv-tag {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        #Astrologia {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Source/servicios/Astrologia.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        #Astrologia .serv-tag {
             color: var(--color-text);
             background: rgba(255, 255, 255, 0.85);
         }
@@ -979,6 +980,26 @@
             width: 18px;
             height: 18px;
             object-fit: contain;
+        }
+
+        .yt-video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            background: #000000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .yt-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* ── HERRAMIENTAS ──────────────────────────────────── */
@@ -1428,7 +1449,6 @@
                 justify-content: space-between;
             }
 
-            /* On mobile, dropdown can display inline/accordion style */
             .dropdown {
                 position: static;
                 opacity: 1;
@@ -1459,7 +1479,6 @@
                 font-size: 0.8rem;
             }
 
-            /* Toggle active animation */
             .nav-toggle.active span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
@@ -1617,7 +1636,7 @@
 
     <!-- QUOTE -->
     <div class="quote-strip">
-        <blockquote>"Almitas lindas, bienvenid@s. Aquí transitamos juntos el camino de la expansión, la vibración y la
+        <blockquote>"Almitas lindas, sean bienvenid@s a transitar junt@s el camino de la expansión, la vibración y la
             luz."</blockquote>
     </div>
 
@@ -1717,6 +1736,14 @@
                     </p>
                     <span class="serv-tag">Sesión individual</span>
                 </div>
+
+                <div class="servicio-card" id="Astrologia">
+                    <h3 class="serv-title">Astrología</h3>
+                    <p class="serv-desc">Sesiones de autoconocimiento basadas en la lectura e interpretación de tu Carta
+                        Natal en donde comprender el mapa simbólico con el que llegamos a esta vida: nuestros talentos,
+                        desafíos, aprendizajes, potenciales y ciclos evolutivos. </p>
+                    <span class="serv-tag">Sesión individual</span>
+                </div>
             </div>
 
             <div class="servicios-adicionales reveal">
@@ -1744,8 +1771,7 @@
                 </div>
 
                 <div class="youtube-col">
-                    <a class="youtube-channel-preview"
-                        href="https://www.youtube.com/@Natyamorterapias?sub_confirmation=1" target="_blank">
+                    <div class="youtube-channel-preview">
                         <div class="yt-preview-header">
                             <div class="yt-profile-group">
                                 <img src="Source/WhatsApp Image 2026-06-07 at 11.58.04.jpeg" alt="Natalia Amor"
@@ -1755,30 +1781,25 @@
                                     <span class="yt-channel-handle">@Natyamorterapias</span>
                                 </div>
                             </div>
-                            <span class="yt-subscribe-btn">Suscribirse</span>
+                            <a href="https://www.youtube.com/@Natyamorterapias?sub_confirmation=1" target="_blank"
+                                class="yt-subscribe-btn">Suscribirse</a>
                         </div>
                         <p class="yt-channel-intro">
                             Accedé a meditaciones guiadas del método EMF Balancing Technique®, activaciones de origen
                             estelar y prácticas gratuitas de Mindfulness y PNL.
                         </p>
-                        <div class="yt-video-mockup">
-                            <div class="yt-video-overlay">
-                                <span class="yt-video-tag">Canal de YouTube</span>
-                                <span class="yt-video-title">Meditaciones & Contenido Gratuito</span>
-                            </div>
-                            <div class="yt-play-button-wrapper">
-                                <div class="yt-play-button">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
+                        <div class="yt-video-container">
+                            <iframe src="https://www.youtube.com/embed/Sj8LgTnvX30" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <div class="yt-channel-link-btn">
+                        <a class="yt-channel-link-btn" href="https://www.youtube.com/@Natyamorterapias" target="_blank">
                             <img src="Source/Redes/youtube.png" alt="YouTube" class="yt-btn-icon">
                             <span>Ver canal de YouTube</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1941,9 +1962,19 @@
         dropdownTriggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth <= 860) {
-                    e.preventDefault();
                     const parent = trigger.parentElement;
-                    parent.classList.toggle('active-mobile-dropdown');
+                    const isAlreadyOpen = parent.classList.contains('active-mobile-dropdown');
+
+                    if (isAlreadyOpen) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-links > li.has-dropdown').forEach(li => {
+                        li.classList.remove('active-mobile-dropdown');
+                    });
+
+                    parent.classList.add('active-mobile-dropdown');
                 }
             });
         });
@@ -1959,6 +1990,22 @@
             });
         }, { threshold: 0.12 });
         reveals.forEach(el => obs.observe(el));
+
+        // Reproduccion de videos de YouTube en el mismo sitio
+        document.querySelectorAll('.yt-video-mockup').forEach(mockup => {
+            mockup.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video-id');
+                if (videoId) {
+                    this.innerHTML = `
+                        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                            title="YouTube video player" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen></iframe>
+                    `;
+                }
+            });
+        });
     </script>
 </body>
 

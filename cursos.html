@@ -91,13 +91,10 @@
 
         .logo-img {
             width: 75px;
-            /* Tamaño de la imagen */
             height: 55px;
             border-radius: 20%;
-            /* Para que sea circular */
             object-fit: cover;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            /* Borde muy sutil */
         }
 
         .nav-logo span {
@@ -248,6 +245,9 @@
             background: linear-gradient(160deg, #f0f5ed 0%, #c8dfc0 100%);
             background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
                 url('Source/Fondos/Fondo-CursosOnline.jpeg');
+            background-size: cover;
+            background-position: center 75%;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1330,9 +1330,19 @@
         dropdownTriggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth <= 860) {
-                    e.preventDefault();
                     const parent = trigger.parentElement;
-                    parent.classList.toggle('active-mobile-dropdown');
+                    const isAlreadyOpen = parent.classList.contains('active-mobile-dropdown');
+
+                    if (isAlreadyOpen) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-links > li.has-dropdown').forEach(li => {
+                        li.classList.remove('active-mobile-dropdown');
+                    });
+
+                    parent.classList.add('active-mobile-dropdown');
                 }
             });
         });
