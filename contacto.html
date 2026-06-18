@@ -759,6 +759,7 @@
             transition: background .2s;
             display: inline-block;
             text-align: center;
+            line-height: 1.4;
         }
 
         .btn-secondary:hover {
@@ -1025,6 +1026,24 @@
                 --section-pad: 64px 24px;
             }
         }
+
+        /* ── QUOTE STRIP ───────────────────────────────────── */
+        .quote-strip {
+            background: var(--color-text);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .quote-strip blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--color-warm);
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
@@ -1097,6 +1116,11 @@
             <p class="page-hero-sub">Estoy aquí para acompañarte. Elegí el canal que más te guste y escribime.</p>
         </div>
     </section>
+
+    <!-- QUOTE -->
+    <div class="quote-strip">
+        <blockquote>"Adorable puente.. se ha creado entre los dos.. Gracias por animarte a cruzarlo.. la causa y el efecto.. Gracias por ser, estar.. Gracias por venir"</blockquote>
+    </div>
 
     <!-- TELÉFONO -->
     <section class="telefono-section" id="telefono">

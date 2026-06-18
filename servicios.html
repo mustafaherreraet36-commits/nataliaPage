@@ -1151,6 +1151,8 @@
 
         .btn-secondary-light {
             display: inline-block;
+            text-align: center;
+            line-height: 1.4;
             border: 1px solid rgba(255, 255, 255, .3);
             color: rgba(255, 255, 255, .7);
             padding: 15px 36px;
@@ -1419,6 +1421,24 @@
                 --section-pad: 64px 24px;
             }
         }
+
+        /* ── QUOTE STRIP ───────────────────────────────────── */
+        .quote-strip {
+            background: var(--color-text);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .quote-strip blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--color-warm);
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
@@ -1491,6 +1511,12 @@
             <p class="page-hero-sub">Un espacio sagrado de encuentro con tu campo energético y tu verdad interior.</p>
         </div>
     </section>
+
+    <!-- QUOTE -->
+    <div class="quote-strip">
+        <blockquote>"Aquí estaré para honrar, bendecir y acompañar tu proceso de sanación, reconexión y expansión, con
+            mucho mucho amor"</blockquote>
+    </div>
 
     <!-- STRIP DE ÍCONOS CIRCULARES -->
     <div class="icons-strip">
