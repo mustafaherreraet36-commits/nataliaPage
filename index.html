@@ -599,7 +599,7 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
@@ -608,7 +608,11 @@
             border-radius: 4px;
             padding: 40px 32px;
             transition: transform .25s, box-shadow .25s;
-            height: 500px;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
         }
 
         .servicio-card:hover {
