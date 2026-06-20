@@ -363,6 +363,7 @@
         .icons-strip {
             background: var(--color-text);
             padding: 52px 24px;
+            padding-top: 0;
         }
 
         .icons-strip-inner {
@@ -621,43 +622,37 @@
         }
 
 
-        /* Estilo para la lista de servicios */
         .serv-list {
             list-style: none;
-            /* Quitamos los puntos por defecto */
             padding-left: 20px;
-            /* Esto genera la sangría */
             margin: 10px 0 20px 0;
         }
 
         .serv-list li {
-            position: relative;
-            font-size: .93rem;
-            line-height: 1.85;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9rem;
             opacity: .8;
             margin-bottom: 8px;
-            padding-left: 15px;
+            padding-left: 0;
         }
 
-        /* Creamos un punto personalizado elegante */
         .serv-list li::before {
             content: "•";
+            font-size: 2.2rem;
+            line-height: 1.8rem;
             color: var(--color-action);
-            /* Usa el color de acento de tu web */
-            font-weight: bold;
-            display: inline-block;
+            font-weight: bolder;
+            flex-shrink: 0;
             width: 15px;
-            margin-left: -15px;
+            margin-left: -10px;
         }
 
-        /* 1. Preparamos el contenedor principal sin romper su grid interno */
         #meditaciones {
             position: relative;
             border-bottom: none;
-            /* Opcional: quita la línea divisoria para que el fondo respire mejor */
         }
 
-        /* 2. Creamos un fondo falso que ignora a los padres y ocupa toda la pantalla */
         #meditaciones::before {
             content: "";
             position: absolute;
@@ -1435,9 +1430,10 @@
             font-weight: 300;
             font-style: italic;
             color: var(--color-warm);
-            max-width: 760px;
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.5;
+            mar
         }
     </style>
 </head>
@@ -1448,7 +1444,7 @@
     <nav id="nav">
         <a class="nav-logo" href="index.html">
             <!-- <img src="" alt="Logo Naty Amor" class="logo-img"> -->
-            Natalia<span>Amor</span>
+            NatyAmor<span>Terapias</span>
         </a>
         <ul class="nav-links" id="nav-links">
             <li class="mobile-home" style="display: none;"><a href="index.html">Home</a></li>
@@ -1514,8 +1510,7 @@
 
     <!-- QUOTE -->
     <div class="quote-strip">
-        <blockquote>"Aquí estaré para honrar, bendecir y acompañar tu proceso de sanación, reconexión y expansión, con
-            mucho mucho amor"</blockquote>
+        <blockquote>"Aquí estaré para honrar, bendecir y acompañar tu proceso con mucho mucho amor"</blockquote>
     </div>
 
     <!-- STRIP DE ÍCONOS CIRCULARES -->
@@ -1837,7 +1832,7 @@
                     <p class="serv-row-desc">Próximamente:</p>
                     <ul class="serv-list">
                         <li>Programa Taller de Equilibrio Energético</li>
-                        <li>Taller de Tameana Nivel I</li>
+                        <li>Programa Taller de Tameana Nivel I</li>
                         <li>Nuevos cursos y experiencias de expansión de consciencia</li>
                     </ul>
 

@@ -600,7 +600,7 @@
 
 
         .info-grid #Cualquier-Lugar {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url('Source/CursosOnline/DesdeCualquierLugar.jpeg');
 
             background-size: cover;
@@ -612,7 +612,7 @@
         }
 
         .info-grid #Acompañamiento-real {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url('Source/CursosOnline/AcompañamientoReal.jpeg');
 
             background-size: cover;
@@ -624,7 +624,7 @@
         }
 
         .info-grid #Certificacion-oficial {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url('Source/CursosOnline/CertificadoOficial.jpeg');
 
             background-size: cover;
@@ -642,6 +642,12 @@
             padding: 36px 28px;
             text-align: center;
             transition: transform .25s, box-shadow .25s;
+        }
+
+        .info-card div {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 20px;
         }
 
         .info-card:hover {
@@ -1046,7 +1052,7 @@
     <nav id="nav">
         <a class="nav-logo" href="index.html">
             <!-- <img src="" alt="Logo Naty Amor" class="logo-img"> -->
-            Natalia<span>Amor</span>
+            NatyAmor<span>Terapias</span>
         </a>
         <ul class="nav-links" id="nav-links">
             <li class="mobile-home" style="display: none;"><a href="index.html">Home</a></li>
@@ -1106,15 +1112,15 @@
         <div class="page-hero-content">
             <p class="page-hero-eyebrow">Formación a distancia · Aprende desde donde estés</p>
             <h1 class="page-hero-title">Cursos <em>Online</em></h1>
-            <p class="page-hero-sub">Herramientas de sanación energética para que puedas integrar en tu vida cotidiana y
-                compartir con otros.</p>
+            <p class="page-hero-sub">Herramientas de sanación energética para que puedas no solo sanar, sino expresar y
+                expandir más de quién sos vos</p>
         </div>
     </section>
 
     <!-- QUOTE -->
     <div class="quote-strip">
-        <blockquote>"Aprender a equilibrar tu energía es un regalo que te das para toda la vida. Y compartirlo, un acto
-            de servicio al mundo."</blockquote>
+        <blockquote>"Aprender a equilibrar tu energía es un regalo que te das para toda la vida. Abrazá este regalo con
+            amor y bendecí tu totalidad</blockquote>
     </div>
 
     <!-- CURSOS DETALLADOS -->
@@ -1239,23 +1245,31 @@
             <div class="info-grid">
                 <div class="info-card reveal" id="Cualquier-Lugar">
                     <!-- <div class="info-card-icon">🌍</div> -->
-                    <h3 class="info-card-title">Desde cualquier lugar</h3>
-                    <p class="info-card-desc">Accedé a las formaciones desde la comodidad de tu hogar, sin importar
-                        dónde estés en el mundo.</p>
+                    <div>
+                        <h3 class="info-card-title">Desde cualquier lugar</h3>
+                        <p class="info-card-desc">Accedé a las formaciones desde la comodidad de tu hogar, sin
+                            importar
+                            dónde estés en el mundo.</p>
+                    </div>
                 </div>
 
                 <div class="info-card reveal" id="Acompañamiento-real">
                     <!--<div class="info-card-icon">🤝</div>-->
-                    <h3 class="info-card-title">Acompañamiento real</h3>
-                    <p class="info-card-desc">Cada curso incluye acompañamiento personalizado para que nunca te sientas
-                        sola en el proceso.</p>
+                    <div>
+                        <h3 class="info-card-title">Acompañamiento real</h3>
+                        <p class="info-card-desc">Cada curso incluye acompañamiento personalizado para que nunca te
+                            sientas
+                            sola en el proceso.</p>
+                    </div>
                 </div>
 
                 <div class="info-card reveal" id="Certificacion-oficial">
                     <!-- <div class="info-card-icon">📜</div> -->
-                    <h3 class="info-card-title">Certificación oficial</h3>
-                    <p class="info-card-desc">Al completar cada formación recibís un certificado que avala tu
-                        aprendizaje y te habilita a practicar.</p>
+                    <div>
+                        <h3 class="info-card-title">Certificación oficial</h3>
+                        <p class="info-card-desc">Al completar cada formación recibís un certificado que avala tu
+                            aprendizaje y te habilita a practicar.</p>
+                    </div>
                 </div>
             </div>
         </div>

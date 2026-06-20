@@ -521,7 +521,7 @@
 
         .youtube-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 28px;
             margin-top: 52px;
         }
@@ -535,6 +535,12 @@
             transition: transform .25s, box-shadow .25s;
         }
 
+        .yt-card div {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+        }
+
         .yt-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 16px 40px rgba(42, 43, 42, .08);
@@ -546,20 +552,21 @@
         }
 
         .yt-card-title {
-            font-family: var(--font-display);
+            font-family: var(--font-body);
             font-size: 1.3rem;
-            font-weight: 500;
+            font-weight: 900;
             margin-bottom: 10px;
         }
 
         .yt-card-desc {
             font-size: .84rem;
+            font-weight: 500;
             line-height: 1.7;
-            opacity: .65;
+            opacity: .85;
         }
 
         #meditaciones-guiadas {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url('Source/Meditaciones/Fondo-MeditacionesGuiadas.jpeg');
 
             background-size: cover;
@@ -571,7 +578,7 @@
         }
 
         #videos-introductorios {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url('Source/Meditaciones/Fondo-VideosIntroductorios.jpeg');
 
             background-size: cover;
@@ -967,7 +974,7 @@
     <nav id="nav">
         <a class="nav-logo" href="index.html">
             <!-- <img src="" alt="Logo Naty Amor" class="logo-img"> -->
-            Natalia<span>Amor</span>
+            NatyAmor<span>Terapias</span>
         </a>
         <ul class="nav-links" id="nav-links">
             <li class="mobile-home" style="display: none;"><a href="index.html">Home</a></li>
@@ -1174,17 +1181,22 @@
             <div class="youtube-grid">
                 <div class="yt-card reveal" id="meditaciones-guiadas">
                     <!-- <div class="yt-card-icon">🎧</div> -->
-                    <h3 class="yt-card-title">Meditaciones guiadas</h3>
-                    <p class="yt-card-desc">Sesiones completas para meditar desde donde estés. Ideales para
-                        principiantes
-                        y para quienes ya tienen práctica.</p>
+                    <div>
+                        <h3 class="yt-card-title">Meditaciones guiadas</h3>
+                        <p class="yt-card-desc">Sesiones completas para meditar desde donde estés. Ideales para
+                            principiantes
+                            y para quienes ya tienen práctica.</p>
+                    </div>
                 </div>
 
                 <div class="yt-card reveal" id="videos-introductorios">
                     <!-- <div class="yt-card-icon">📖</div> -->
-                    <h3 class="yt-card-title">Videos introductorios</h3>
-                    <p class="yt-card-desc">Explicaciones sobre las terapias, herramientas y conceptos clave para que
-                        entiendas cada paso del camino.</p>
+                    <div>
+                        <h3 class="yt-card-title">Videos introductorios</h3>
+                        <p class="yt-card-desc">Explicaciones sobre las terapias, herramientas y conceptos clave para
+                            que
+                            entiendas cada paso del camino.</p>
+                    </div>
                 </div>
             </div>
 
